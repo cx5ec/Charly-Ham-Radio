@@ -1,0 +1,19 @@
+<section style="background-color:#1c1c1c; color:#e0e0e0; font-family:'Orbitron', sans-serif; padding:40px;">
+  <header style="text-align:center;">
+    <img src="TU_LOGO_AQUI" alt="Logo Estación Charly" style="width:150px;"/>
+    <h1 style="color:#aaff00;">Estación Charly</h1>
+    <p style="font-style:italic;">Comunicación táctica desde el corazón de Uruguay</p>
+  </header>
+  <nav style="margin: 20px auto; text-align:center;">
+    <a href="#guías" style="margin:0 15px; color:#aaff00;">Guías</a>
+    <a href="#bitácora" style="margin:0 15px; color:#aaff00;">Bitácora</a>
+    <a href="#proyectos" style="margin:0 15px; color:#aaff00;">Proyectos</a>
+    <a href="#contacto" style="margin:0 15px; color:#aaff00;">Contacto</a>
+  </nav>
+  <section style="text-align:center; margin-top:40px;">
+    <h2>¡Bienvenido operador!</h2>
+    <p>Este es el sitio oficial de <strong>CX5EC-CVC5028</strong>, transmitiendo desde San José de Mayo, Uruguay 🇺🇾</p>
+    <p>Compartimos conocimiento táctico, guías y bitácoras desde el shack al aire libre.</p>
+    <a href="#blog" style="display:inline-block; margin-top:20px; padding:10px 20px; background-color:#aaff00; color:#1c1c1c; text-decoration:none;">Entrá al blog</a>
+  </section>
+</section>
