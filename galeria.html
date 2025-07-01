@@ -11,6 +11,9 @@
       margin: 0;
       padding: 20px;
     }
+    img{
+        margin-bottom: 15px;
+    }
     .galeria {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -30,11 +33,42 @@
 </head>
 <body>
   <h1>📡 Galería Estación Charly</h1>
+
+  <div class="contenedor galeria">
+    <div class="columna">
+                    <img src="imagenes/yo.jpeg" style="width: 100%" alt="Yo">
+
+    </div>
+    <div class="columna">
+        <img src="imagenes/yagui.jpeg" style="width: 100%" alt="Antena direccional">
+
+    </div>
+    <div class="columna">
+        <img src="imagenes/jack.jpeg" style="width: 100%" alt="Bitácora de comunicación">
+        <img src="imagenes/jack.jpeg" style="width: 100%" alt="Bitácora de comunicación">
+
+    </div>
+  </div>
+
+  <style>
+    .contenedor {
+      display: flex;           /* Flexbox para organizar columnas */
+      justify-content: space-between; /* Espacio entre columnas */
+    }
+
+    .columna {
+      flex: 1;                 /* Todas las columnas ocupan el mismo espacio */
+      padding: 5px;
+      margin: 5px;
+      background: none;
+      text-align: center;
+    }
+  </style>
   <div class="galeria">
-    <img src="imagenes/yo.jpeg" alt="yo">
-    <img src="imagenes/yagui.jpeg" alt="Antena direccional">
-    <img src="imagenes/jack.jpeg" alt="Bitácora de comunicación">
+
     <!-- Agregá más imágenes aquí -->
   </div>
+
+ 
 </body>
 </html>
