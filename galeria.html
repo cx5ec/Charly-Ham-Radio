@@ -1,56 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Galería de Estación Charly</title>
-  <style>
-    body {
-      background-color: #0f0f0f;
-      color: #e0e0e0;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-    img{
-        margin-bottom: 15px;
-    }
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-    }
-    .galeria img {
-      width: 100%;
-      height: auto;
-      border: 2px solid #00ff99;
-      border-radius: 4px;
-      transition: transform 0.3s ease;
-    }
-    .galeria img:hover {
-      transform: scale(1.05);
-    }
-  </style>
-</head>
-<body>
-  <h1>📡 Galería Estación Charly</h1>
-
-  <div class="contenedor galeria">
-    <div class="columna">
-                    <img src="imagenes/yo.jpeg" style="width: 100%" alt="Yo">
-
-    </div>
-    <div class="columna">
-        <img src="imagenes/yagui.jpeg" style="width: 100%" alt="Antena direccional">
-
-    </div>
-    <div class="columna">
-        <img src="imagenes/jack.jpeg" style="width: 100%" alt="Bitácora de comunicación">
-        <img src="imagenes/jack1.jpeg" style="width: 100%" alt="Bitácora de comunicación">
-        <img src="imagenes/jack2.jpeg" style="width: 100%" alt="Bitácora de comunicación">
-
-
-    </div>
-  </div>
 
   <style>
     .contenedor {
@@ -74,3 +21,36 @@
  
 </body>
 </html>
+<style>
+  .galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #1a1a1a; /* fondo oscuro tipo panel táctico */
+    border: 2px solid #3a3a3a;
+  }
+
+  .galeria img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #556B2F; /* verde oliva militar */
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+  }
+
+  .galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255,255,255,0.2);
+  }
+</style>
+
+<div class="galeria">
+  <img src="tu-imagen1.jpg" alt="Descripción 1">
+  <img src="tu-imagen2.jpg" alt="Descripción 2">
+  <img src="tu-imagen3.jpg" alt="Descripción 3">
+  <!-- Agregá más imágenes acá -->
+</div>
