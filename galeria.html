@@ -54,3 +54,21 @@
   <img src="imagenes/yagui.jpeg" alt="antenas 3">
   <!-- Agregá más imágenes acá -->
 </div>
+.galeria {
+  position: relative;
+}
+
+.galeria .imagen-con-marca {
+  position: relative;
+}
+
+.galeria .imagen-con-marca::after {
+  content: "📡 CX5EC | CVC5028";
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-size: 14px;
+  color: rgba(0, 255, 0, 0.6);
+  font-family: 'Courier New', monospace;
+  pointer-events: none;
+}
