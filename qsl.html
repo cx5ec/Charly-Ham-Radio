@@ -23,3 +23,55 @@ function buscarQSL() {
   img.src = ruta;
 }
 </script>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    height: 100%;
+    font-family: 'Courier New', monospace;
+  }
+
+  .qsl-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: black;
+  }
+
+  h2 {
+    color: limegreen;
+    margin-bottom: 20px;
+  }
+
+  input, button {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid limegreen;
+    background-color: #111;
+    color: #0f0;
+  }
+
+  a {
+    color: #4CAF50;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .resultado {
+    margin-top: 30px;
+    border: 2px solid limegreen;
+    padding: 20px;
+    background-color: #0b0b0b;
+  }
+
+  img {
+    max-width: 100%;
+    border: 2px solid limegreen;
+    margin-bottom: 10px;
+  }
+</style>
