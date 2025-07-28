@@ -73,5 +73,31 @@
       enlace.click();
     }
   </script>
+  <section style="background-color:black; color:white; padding:20px;">
+  <h2 style="color:limegreen;">📡 Buscar tu tarjeta QSL</h2>
+  <input type="text" id="indicativo" placeholder="Ej: CX5EC" style="padding:8px; width:200px;">
+  <button onclick="buscarQSL()" style="padding:8px; background-color:green; color:white; border:none;">Ver QSL</button>
+  <div id="resultado" style="margin-top:20px;"></div>
+</section>
+
+<script>
+function buscarQSL() {
+  const indicativo = document.getElementById("indicativo").value.toUpperCase().trim();
+  const ruta = `qsls/QSL_${indicativo}.jpg`;
+  const resultado = document.getElementById("resultado");
+
+  const img = new Image();
+  img.onload = function() {
+    resultado.innerHTML = `<h3 style="color:limegreen;">QSL encontrada para ${indicativo}</h3>
+      <img src="${ruta}" alt="QSL ${indicativo}" style="max-width:100%; border:2px solid limegreen; margin-bottom:10px;">
+      <br><a href="${ruta}" download style="color:#4CAF50;">📥 Descargar QSL</a>`;
+  };
+  img.onerror = function() {
+    resultado.innerHTML = `<p style="color:red;">No se encontró tarjeta QSL para el indicativo ${indicativo}.</p>`;
+  };
+  img.src = ruta;
+}
+</script>
+
 </body>
 </html>
