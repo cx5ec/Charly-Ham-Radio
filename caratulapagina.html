@@ -17,3 +17,29 @@
     <a href="#blog" style="display:inline-block; margin-top:20px; padding:10px 20px; background-color:#aaff00; color:#1c1c1c; text-decoration:none;">Entrá al blog</a>
   </section>
 </section>
+<!-- FORMULARIO DE BÚSQUEDA QSL -->
+<section style="background-color:black; color:white; padding:20px;">
+  <h2 style="color:limegreen;">🔎 Buscar QSL por Indicativo</h2>
+  <input type="text" id="indicativo" placeholder="Ej: LU5ABC o CX2XYZ" style="padding:8px; width:200px;">
+  <button onclick="buscarQSL()" style="padding:8px; background-color:green; color:white; border:none;">Buscar</button>
+  <div id="resultado" style="margin-top:20px;"></div>
+</section>
+
+<script>
+function buscarQSL() {
+  const indicativo = document.getElementById("indicativo").value.toUpperCase().trim();
+  const ruta = `qsls/QSL_${indicativo}.jpg`;
+  const resultado = document.getElementById("resultado");
+
+  // Verifica si la imagen existe
+  const img = new Image();
+  img.onload = function() {
+    resultado.innerHTML = `<h3 style="color:limegreen;">QSL encontrada para ${indicativo}</h3>
+      <img src="${ruta}" alt="QSL de ${indicativo}" style="max-width:100%; border:2px solid limegreen;">`;
+  };
+  img.onerror = function() {
+    resultado.innerHTML = `<p style="color:red;">No se encontró QSL para el indicativo ${indicativo}.</p>`;
+  };
+  img.src = ruta;
+}
+</script>
