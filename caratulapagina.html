@@ -6,20 +6,86 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
   <style>
     body {
-     <section style="background-color:#1c1c1c; color:#e0e0e0; font-family:'Orbitron', sans-serif; padding:40px;">
-  <header style="text-align:center;">
-    <img src="logo.png" alt="Logo Estación Charly" style="width:150px; border-radius:110px" />
-    <h1 style="color:#aaff00;">Estación Charly</h1>
-    <p style="font-style:italic;">Comunicación táctica desde el corazón de Uruguay</p>
-  </header>
+      background-color: #1c1c1c;
+      color: #e0e0e0;
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
+    .navButton {
+      margin: 0 15px;
+      color: #aaff00;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+      padding: 8px 12px;
+      transition: all 0.3s ease;
+    }
+
+    .navButton::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #aaff00;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .navButton:hover {
+      color: #ffffff;
+      text-shadow: 0 0 5px #aaff00;
+    }
+
+    .navButton:hover::after {
+      transform: scaleX(1);
+    }
+
+    .blogButton {
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #aaff00;
+      color: #1c1c1c;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      box-shadow: 0 0 0 transparent;
+    }
+
+    .blogButton:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #aaff00;
+      background-color: #ccff33;
+    }
+
+    .qslButton {
+      padding: 8px 16px;
+      background-color: green;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+    }
+
+    .qslButton:hover {
+      background-color: limegreen;
+      box-shadow: 0 0 10px limegreen;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
 
   <section style="padding:40px;">
     <header style="text-align:center;">
-      <img src="logo.png" alt="Logo Estación Charly" style="width:150px;"/>
+      <img src="logo.png" alt="Logo Estación Charly" style="width:150px; border-radius:110px;" />
       <h1 style="color:#aaff00;">Estación Charly</h1>
       <p style="font-style:italic;">Comunicación táctica desde el corazón de Uruguay</p>
     </header>
@@ -41,6 +107,5 @@
     </section>
   </section>
 
-  
 </body>
 </html>
