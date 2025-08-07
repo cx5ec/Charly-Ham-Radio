@@ -18,13 +18,30 @@
       color: #aaff00;
       text-decoration: none;
       font-weight: bold;
+      position: relative;
+      padding: 8px 12px;
       transition: all 0.3s ease;
+    }
+
+    .navButton::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #aaff00;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
     }
 
     .navButton:hover {
       color: #ffffff;
       text-shadow: 0 0 5px #aaff00;
-      transform: scale(1.1);
+    }
+
+    .navButton:hover::after {
+      transform: scaleX(1);
     }
 
     .blogButton {
@@ -35,23 +52,26 @@
       background-color: #aaff00;
       color: #1c1c1c;
       text-decoration: none;
-      transition: 0.3s;
+      transition: all 0.3s ease;
       font-weight: bold;
+      box-shadow: 0 0 0 transparent;
     }
 
     .blogButton:hover {
       transform: scale(1.05);
       box-shadow: 0 0 10px #aaff00;
+      background-color: #ccff33;
     }
 
     .qslButton {
-      padding: 8px;
+      padding: 8px 16px;
       background-color: green;
       color: white;
       border: none;
       font-weight: bold;
       cursor: pointer;
       transition: all 0.3s ease;
+      border-radius: 4px;
     }
 
     .qslButton:hover {
