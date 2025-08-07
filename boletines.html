@@ -1,90 +1,50 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Boletines del Radio Club Sierra Juliet</title>
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Courier New', Courier, monospace;
-      margin: 0;
-      padding: 0;
-    }
-
-    .boletines {
-      padding: 2em;
-      border-top: 2px solid #0f0;
-    }
-
-    .boletines h2 {
-      color: #0f0;
-      font-size: 1.8em;
-      margin-bottom: 0.5em;
-      text-transform: uppercase;
-      text-align: center;
-    }
-
-    .boletines .intro {
-      font-size: 1em;
-      margin-bottom: 2em;
-      line-height: 1.5;
-      color: #ccc;
-      text-align: center;
-    }
-
-    .grid-boletines {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.5em;
-    }
-
-    .boletin {
-      background-color: #111;
-      border: 1px solid #0f0;
-      padding: 1em;
-      text-align: center;
-      transition: transform 0.2s ease;
-    }
-
-    .boletin:hover {
-      transform: scale(1.05);
-      border-color: #0f0;
-    }
-
-    .boletin img {
-      width: 100%;
-      height: auto;
-      border: 2px solid #0f0;
-      margin-bottom: 0.5em;
-    }
-
-    .boletin p {
-      color: #0f0;
-      font-weight: bold;
-      font-size: 0.95em;
-      margin: 0;
-    }
-  </style>
 </head>
-<body>
+<body style="background-color:#000; color:#fff; font-family:sans-serif; margin:0; padding:1em;">
 
-  <section class="boletines">
-    <h2>📡 Boletines del Radio Club Sierra Juliet</h2>
-    <p class="intro">
+  <section>
+    <div style="display:flex; align-items:center; justify-content:center; gap:1em; margin-bottom:1em;">
+      <div style="position:relative; width:80px; height:80px; background-color:#000; border:2px solid #0f0; border-radius:8px; display:flex; align-items:center; justify-content:center;">
+        <div style="position:absolute; top:-1.2em; left:50%; transform:translateX(-50%); color:red; font-size:0.8em; font-weight:bold;">SIERRA JULIET</div>
+        <div style="position:absolute; bottom:-1.2em; left:50%; transform:translateX(-50%); color:blue; font-size:0.7em;">Radio Club</div>
+        <div style="font-size:1.8em; font-weight:bold;">
+          <span style="color:blue;">S</span><span style="color:red;">J</span>
+        </div>
+      </div>
+      <h2 style="color:#0f0; text-transform:uppercase; margin:0;">📡 Boletines del Radio Club Sierra Juliet</h2>
+    </div>
+
+    <p style="max-width:700px; margin:auto; text-align:center;">
       Como parte del equipo del Radio Club Sierra Juliet, comparto en este blog las ediciones quincenales del boletín institucional. Desde abril de 2025, cada número documenta nuestras actividades, activaciones y reflexiones operativas. Son transmisiones escritas que fortalecen la red CX y celebran nuestra vocación por la radiocomunicación.
     </p>
-    <div class="grid-boletines">
-      <div class="boletin"><a href="boletines/boletin-01.pdf" target="_blank"><img src="boletines/preview-01.jpg" alt="Boletín 01"><p>Boletín 01 - Abril  1</p></a></div>
-      <div class="boletin"><a href="boletines/boletin-02.pdf" target="_blank"><img src="boletines/preview-02.jpg" alt="Boletín 02"><p>Boletín 02 - Abril  2</p></a></div>
-      <div class="boletin"><a href="boletines/boletin-03.pdf" target="_blank"><img src="boletines/preview-03.jpg" alt="Boletín 03"><p>Boletín 03 - Mayo   3</p></a></div>
-      <div class="boletin"><a href="boletines/boletin-04.pdf" target="_blank"><img src="boletines/preview-04.jpg" alt="Boletín 04"><p>Boletín 04 - Mayo   4</p></a></div>
-      <div class="boletin"><a href="boletines/boletin-05.pdf" target="_blank"><img src="boletines/preview-05.jpg" alt="Boletín 05"><p>Boletín 05 - Junio  5</p></a></div>
-      <div class="boletin"><a href="boletines/boletin-06.pdf" target="_blank"><img src="boletines/preview-06.jpg" alt="Boletín 06"><p>Boletín 06 - Junio  6</p></a></div>
-      <div class="boletin"><a href="boletines/boletin-07.pdf" target="_blank"><img src="boletines/preview-07.jpg" alt="Boletín 07"><p>Boletín 07 - Julio  7</p></a></div>
-      <div class="boletin"><a href="boletines/boletin-08.pdf" target="_blank"><img src="boletines/preview-08.jpg" alt="Boletín 08"><p>Boletín 08 - Julio  8</p></a></div>
-      <div class="boletin"><a href="boletines/boletin-09.pdf" target="_blank"><img src="boletines/preview-09.jpg" alt="Boletín 09"><p>Boletín 09 - Agosto 9</p></a></div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1em; margin-top:2em;">
+      <!-- Boletín 01 -->
+      <div style="background-color:#111; padding:1em; border:1px solid #0f0;">
+        <strong>Boletín 01 - Abril 1</strong><br>
+        <iframe src="pdf/boletin01.pdf" width="100%" height="200px" style="border:none; margin-top:0.5em;"></iframe><br>
+        <a href="pdf/boletin01.pdf" download style="color:#0f0;">📥 Descargar PDF</a>
+      </div>
+
+      <!-- Boletín 02 -->
+      <div style="background-color:#111; padding:1em; border:1px solid #0f0;">
+        <strong>Boletín 02 - Abril 2</strong><br>
+        <iframe src="pdf/boletin02.pdf" width="100%" height="200px" style="border:none; margin-top:0.5em;"></iframe><br>
+        <a href="pdf/boletin02.pdf" download style="color:#0f0;">📥 Descargar PDF</a>
+      </div>
+
+      <!-- Boletín 03 -->
+      <div style="background-color:#111; padding:1em; border:1px solid #0f0;">
+        <strong>Boletín 03 - Mayo 3</strong><br>
+        <iframe src="pdf/boletin03.pdf" width="100%" height="200px" style="border:none; margin-top:0.5em;"></iframe><br>
+        <a href="pdf/boletin03.pdf" download style="color:#0f0;">📥 Descargar PDF</a>
+      </div>
+
+      <!-- Agregá más boletines siguiendo este formato -->
     </div>
   </section>
 
