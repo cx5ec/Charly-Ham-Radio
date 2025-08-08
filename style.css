@@ -30,25 +30,25 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 16px;
+  gap: 10px;
   margin: 30px 0;
 }
 
-nav a, .blogButton {
+nav a,
+.blogButton {
   border-radius: 5px;
-  height: 60px;
-  width: 120px;
+  padding: 8px 16px;
   background-color: #aaff00;
   color: #1c1c1c;
   text-decoration: none;
   font-weight: bold;
-  font-size: 14px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-nav a:hover, .blogButton:hover {
+nav a:hover,
+.blogButton:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 8px #aaff00;
+  box-shadow: 0 0 5px #aaff00;
 }
 
 .bienvenida h2 {
