@@ -25,6 +25,23 @@ header h1 {
 header p {
   font-style: italic;
 }
+<style>
+.blogButton {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #00ff00;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00ff00;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.blogButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ff00;
+}
+</style>
 
 nav {
   display: flex;
