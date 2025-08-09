@@ -1,7 +1,33 @@
-header h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #aaff00;
+/* Subtítulo animado debajo del título */
+.subtitulo {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  font-style: italic;
+  animation: fadeInUp 1s ease-in;
   margin-top: 10px;
-  text-shadow: 1px 1px 2px #000;
+}
+
+/* Línea decorativa táctica */
+.header-line {
+  width: 80px;
+  height: 3px;
+  background-color: #aaff00;
+  margin: 20px auto;
+  box-shadow: 0 0 8px #aaff00;
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Versión responsive para móviles */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .subtitulo {
+    font-size: 1rem;
+  }
 }
