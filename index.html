@@ -14,11 +14,16 @@
       padding: 0;
     }
 
+    .escudo {
+      text-align: center;
+      margin-top: 2em;
+    }
+
     .escudo img {
       width: 200px;
-      box-shadow: 0 0 25px #00ff00;
+      height: auto;
       border-radius: 50%;
-      margin-top: 2em;
+      box-shadow: 0 0 25px #00ff00;
     }
 
     .botonera {
@@ -51,6 +56,30 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    .boton-blog {
+      text-align: center;
+      margin-top: 4em;
+      margin-bottom: 2em;
+    }
+
+    .boton-principal-grande {
+      display: inline-block;
+      padding: 24px 48px;
+      background-color: #00ff00;
+      color: #000;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.6em;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #00ff00;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .boton-principal-grande:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px #00ff00;
+    }
+
     footer {
       margin-top: 3em;
       font-size: 0.9em;
@@ -66,53 +95,27 @@
 
   <section>
     <div class="escudo">
-      <img src="img/escudo-cx5ec.png" alt="Escudo CX5EC">
+      <img src="escudo.png" alt="Escudo CX5EC">
     </div>
 
     <h2 style="margin-top: 2em;">Radio táctica en frecuencia</h2>
     <p style="font-size: 1.1em;">Desde San José de Mayo al mundo, CX5EC transmite con identidad y precisión.</p>
 
     <div class="botonera">
-      <a href="guias.html" class="boton-tactico"> Guías</a>
-      <a href="qsl.html" class="boton-tactico"> QSL</a>
-      <a href="boletines.html" class="boton-tactico"> Boletines</a>
-      <a href="galeria.html" class="boton-tactico"> Galería</a>
-      <a href="contacto.html" class="boton-tactico"> Contacto</a>
+      <a href="guias.html" class="boton-tactico">Guías</a>
+      <a href="qsl.html" class="boton-tactico">QSL</a>
+      <a href="boletines.html" class="boton-tactico">Boletines</a>
+      <a href="galeria.html" class="boton-tactico">Galería</a>
+      <a href="contacto.html" class="boton-tactico">Contacto</a>
     </div>
   </section>
-<div class="boton-blog">
-  <a href="blog.html" class="boton-principal-grande">📂 Entrá al blog</a>
-</div>
 
-<style>
-.boton-blog {
-  text-align: center;
-  margin-top: 4em;
-  margin-bottom: 2em;
-}
-
-.boton-principal-grande {
-  display: inline-block;
-  padding: 24px 48px;
-  background-color: #00ff00;
-  color: #000;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.6em;
-  text-decoration: none;
-  border-radius: 8px;
-  box-shadow: 0 0 15px #00ff00;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.boton-principal-grande:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px #00ff00;
-}
-</style>
+  <div class="boton-blog">
+    <a href="blog.html" class="boton-principal-grande">📂 Entrá al blog</a>
+  </div>
 
   <footer>
     <p>© 2025 Estación Charly • CX5EC • Todos los derechos reservados</p>
   </footer>
 </body>
 </html>
-
