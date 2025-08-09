@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ficha Táctica - Estación Charly</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #000;
+      color: #ccc;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      padding-bottom: 10px;
+      border-bottom: 2px dashed #00ff00;
+    }
+    header h1 {
+      color: #00ff00;
+      font-size: 2em;
+    }
+    .section {
+      margin-top: 25px;
+    }
+    .section h2 {
+      color: #00ff00;
+      border-bottom: 1px dashed #00ff00;
+      padding-bottom: 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #555;
+      padding: 10px;
+    }
+    th {
+      background-color: #222;
+      color: #00ff00;
+    }
+    tr:nth-child(even) {
+      background-color: #1c1c1c;
+    }
+    ul li::before {
+      content: "🟢 ";
+    }
+    .recommendation {
+      background-color: #111;
+      border: 1px solid #00ff00;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-style: italic;
+      color: #7fff00;
+    }
+    @media screen and (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      td {
+        padding: 8px;
+        border: none;
+        border-bottom: 1px solid #444;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1> CX5EC - Ficha Táctica Visual</h1>
+    <p>Antenas estratégicas y uso de balun en operaciones</p>
+  </header>
+
+  <section class="section">
+    <h2> Comparativa de Antenas</h2>
+    <table>
+      <tr>
+        <th>Tipo</th>
+        <th>Ventajas</th>
+        <th>Balun</th>
+        <th>Ideal para</th>
+      </tr>
+      <tr>
+        <td>Dipolo</td>
+        <td>Simple, buena ganancia</td>
+        <td>1:1</td>
+        <td>Estación base HF</td>
+      </tr>
+      <tr>
+        <td>Vertical</td>
+        <td>Poco espacio, buen DX</td>
+        <td>Opcional</td>
+        <td>Portable táctica</td>
+      </tr>
+      <tr>
+        <td>Yagi</td>
+        <td>Alta directividad</td>
+        <td>Diseño específico</td>
+        <td>Concursos y caza de DX</td>
+      </tr>
+      <tr>
+        <td>Loop</td>
+        <td>Recepción limpia</td>
+        <td>4:1</td>
+        <td>Ambiente urbano</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2> Funciones del Balun</h2>
+    <ul>
+      <li>Elimina corriente de retorno en coaxial</li>
+      <li>Mejora patrón de radiación</li>
+      <li>Minimiza interferencias</li>
+      <li>Recomendado: 1:1 para dipolo, 4:1 para loop</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2> Operación táctica recomendada</h2>
+    <ul>
+      <li> Vertical plegable para campo</li>
+      <li> Dipolo con balun para base</li>
+      <li> Yagi para concursos</li>
+    </ul>
+  </section>
+
+  <div class="recommendation">
+    Consejo CX5EC: “Un buen balun convierte ruido en disciplina. Transmití como si fueras parte de una formación táctica.”
+  </div>
+</body>
+</html>
