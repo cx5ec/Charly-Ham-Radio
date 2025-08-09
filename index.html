@@ -5,36 +5,84 @@
   <title>Estación Charly – CX5EC</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    @keyframes brillo {
-      from { filter: drop-shadow(0 0 5px #00ff00); }
-      to { filter: drop-shadow(0 0 15px #00ff00); }
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .escudo img {
+      width: 200px;
+      box-shadow: 0 0 25px #00ff00;
+      border-radius: 50%;
+      margin-top: 2em;
+    }
+
+    .botonera {
+      margin-top: 2em;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .boton-tactico {
+      padding: 12px 20px;
+      background-color: transparent;
+      color: #00ff00;
+      border: 2px solid #00ff00;
+      font-family: 'Orbitron', sans-serif;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: entrada 1s ease-out;
+    }
+
+    .boton-tactico:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00ff00;
+    }
+
+    @keyframes entrada {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      margin-top: 3em;
+      font-size: 0.9em;
+      color: #ccc;
     }
   </style>
 </head>
-<body style="background-color: #000; color: #00ff00; font-family: 'Orbitron', sans-serif; text-align: center;">
-
+<body>
   <header>
     <h1 style="font-size: 2.5em; margin-top: 1em;">Estación Charly – CX5EC</h1>
     <p style="font-size: 1.2em;">Comunicación táctica desde San José de Mayo</p>
   </header>
 
-  <section style="margin-top: 2em;">
-    <div style="margin-bottom: 2em;">
-      <img src="img/escudo-cx5ec.png" alt="Escudo CX5EC" style="width: 200px; box-shadow: 0 0 25px #00ff00; border-radius: 50%;">
-    </div>
-
-    <div>
-      <img src="img/botin-izquierdo.png" alt="Botín izquierdo" style="width: 100px; margin-right: 20px; animation: brillo 2s infinite alternate;">
-      <img src="img/botin-derecho.png" alt="Botín derecho" style="width: 100px; animation: brillo 2s infinite alternate;">
+  <section>
+    <div class="escudo">
+      <img src="img/escudo-cx5ec.png" alt="Escudo CX5EC">
     </div>
 
     <h2 style="margin-top: 2em;">Radio táctica en frecuencia</h2>
     <p style="font-size: 1.1em;">Desde San José de Mayo al mundo, CX5EC transmite con identidad y precisión.</p>
+
+    <div class="botonera">
+      <a href="guias.html" class="boton-tactico">📘 Guías</a>
+      <a href="qsl.html" class="boton-tactico">📨 QSL</a>
+      <a href="boletines.html" class="boton-tactico">📑 Boletines</a>
+      <a href="galeria.html" class="boton-tactico">🖼️ Galería</a>
+      <a href="contacto.html" class="boton-tactico">📡 Contacto</a>
+    </div>
   </section>
 
-  <footer style="margin-top: 3em; font-size: 0.9em; color: #ccc;">
+  <footer>
     <p>© 2025 Estación Charly • CX5EC • Todos los derechos reservados</p>
   </footer>
-
 </body>
 </html>
