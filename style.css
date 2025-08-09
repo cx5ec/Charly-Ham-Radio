@@ -1,7 +1,86 @@
+body {
+  margin: 0;
+  background-color: #1c1c1c;
+  color: #e0e0e0;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.caratula {
+  padding: 40px;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+header img {
+  width: 150px;
+  border-radius: 110px;
+  box-shadow: 0 0 10px #aaff00;
+}
+
 header h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
   color: #aaff00;
   margin-top: 10px;
-  text-shadow: 1px 1px 2px #000;
+}
+
+header p {
+  font-style: italic;
+}
+<style>
+.blogButton {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #00ff00;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00ff00;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.blogButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ff00;
+}
+</style>
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+nav a,
+.blogButton {
+  border-radius: 5px;
+  padding: 8px 16px;
+  background-color: #aaff00;
+  color: #1c1c1c;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 5px;
+}
+
+nav a:hover,
+.blogButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px #aaff00;
+}
+
+.bienvenida h2 {
+  color: #aaff00;
+  margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
