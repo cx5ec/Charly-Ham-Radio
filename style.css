@@ -60,6 +60,7 @@ nav a,
   text-decoration: none;
   font-weight: bold;
   transition: transform 0.3s, box-shadow 0.3s;
+  margin: 5px;
 }
 
 nav a:hover,
