@@ -54,6 +54,31 @@
 
     <section style="text-align:center; margin-top:40px;">
       <h2>¡Bienvenido Radioaficionados y Cebeistas!</h2>
+      <div id="utcClock" class="utc-style"></div>
+
+<style>
+  .utc-style {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ff00;
+    background-color: #000;
+    padding: 5px 10px;
+    border: 1px solid #00ff00;
+    display: inline-block;
+  }
+</style>
+
+<script>
+  function updateUTC() {
+    const now = new Date();
+    const utcHours = now.getUTCHours().toString().padStart(2, '0');
+    const utcMinutes = now.getUTCMinutes().toString().padStart(2, '0');
+    const utcSeconds = now.getUTCSeconds().toString().padStart(2, '0');
+    document.getElementById('utcClock').textContent = `UTC ${utcHours}:${utcMinutes}:${utcSeconds}`;
+  }
+  setInterval(updateUTC, 1000);
+  updateUTC();
+</script>
+
       <p>Este es el sitio oficial de <strong>CX5EC-CVC5028</strong>, transmitiendo desde San José de Mayo, Uruguay 🇺🇾</p>
       <p>Compartimos conocimiento táctico, guías y bitácoras desde el shack al aire libre.</p>
       <a class="blogButton" href="primerpost.html">📘 Entrá al blog</a>
