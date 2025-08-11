@@ -94,6 +94,7 @@
     </div>
 
     <h2 style="margin-top: 2em;">Radio táctica en frecuencia</h2>
+          <div id="utcClock" class="utc-style"></div>
     <p style="font-size: 1.1em;">Desde San José de Mayo al mundo, CX5EC transmite con identidad y precisión.</p>
 
     <div class="botonera">
@@ -115,3 +116,26 @@
 </body>
 </html>
 
+<style>
+  .utc-style {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ff00;
+    background-color: #000;
+    padding: 5px 10px;
+    border: 1px solid #00ff00;
+    display: inline-block;
+  }
+</style>
+
+
+<script>
+  function updateUTC() {
+    const now = new Date();
+    const utcHours = now.getUTCHours().toString().padStart(2, '0');
+    const utcMinutes = now.getUTCMinutes().toString().padStart(2, '0');
+    const utcSeconds = now.getUTCSeconds().toString().padStart(2, '0');
+    document.getElementById('utcClock').textContent = `UTC ${utcHours}:${utcMinutes}:${utcSeconds}`;
+  }
+  setInterval(updateUTC, 1000);
+  updateUTC();
+</script>
