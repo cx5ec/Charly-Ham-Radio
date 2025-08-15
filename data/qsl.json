@@ -1,9 +1,27 @@
 {
-  "CX3AAR": [
-    "QSLS/QSL_CX3AAR.jpg"
-  ],
-  "CX5EC": [
-    "QSLS/QSL_CX5EC.jpg"
-  ]
+  "CX1SH": ["qsls/QSL_CX1SH.jpg"],
+  "CX3AAE": ["qsls/QSL_CX3AAE.jpg"],
+  "CX3AAR": ["qsls/QSL_CX3AAR.jpg"],
+  "CX3JY": ["qsls/QSL_CX3JY.jpg"],
+  "CX6TU": ["qsls/QSL_CX6TU.jpg"],
+  "D1MK": ["qsls/QSL_D1MK.jpg"],
+  "LU1APS": ["qsls/QSL_LU1APS.jpg"],
+  "LU1DZQ": ["qsls/QSL_LU1DZQ.jpg"],
+  "LU1IDC": ["qsls/QSL_LU1IDC.jpg"],
+  "LU1JHE": ["qsls/QSL_LU1JHE.jpg"],
+  "LU2GPB": ["qsls/QSL_LU2GPB.jpg"],
+  "LU2HDT": ["qsls/QSL_LU2HDT.jpg"],
+  "LU4FQC": ["qsls/QSL_LU4FQC.jpg"],
+  "LU5ANL": ["qsls/QSL_LU5ANL.jpg"],
+  "LU5HCV": ["qsls/QSL_LU5HCV.jpg"],
+  "LU6EFJ": ["qsls/QSL_LU6EFJ.jpg"],
+  "LU6EJN": ["qsls/QSL_LU6EJN.jpg"],
+  "LU7FSD": ["qsls/QSL_LU7FSD.jpg"],
+  "LU9EST": ["qsls/QSL_LU9EST.jpg"],
+  "LU9IBO": ["qsls/QSL_LU9IBO.jpg"],
+  "LW2EDL": ["qsls/QSL_LW2EDL.jpg"],
+  "LW4DA": ["qsls/QSL_LW4DA.jpg"],
+  "CX5EC": ["qsls/QSL_CX5EC.jpg"]
 }
+
 
