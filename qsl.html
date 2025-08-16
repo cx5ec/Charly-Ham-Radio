@@ -1,77 +1,85 @@
-<section style="background-color:black; color:white; padding:20px;">
-  <h2 style="color:limegreen;"> Buscar tu tarjeta QSL</h2>
-  <input type="text" id="indicativo" placeholder="Ej: CX5EC" style="padding:8px; width:200px;">
-  <button onclick="buscarQSL()" style="padding:8px; background-color:green; color:white; border:none;">Ver QSL</button>
-  <div id="resultado" style="margin-top:20px;"></div>
-</section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Buscador de QSL – CX5EC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      text-shadow: 0 0 10px #00ff00;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      margin: 10px;
+    }
+    input {
+      width: 250px;
+      background-color: #111;
+      color: #00ff00;
+      border: 1px solid #00ff00;
+    }
+    button {
+      background-color: #00ff00;
+      color: black;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    img {
+      width: 300px;
+      margin: 15px;
+      box-shadow: 0 0 10px #00ff00;
+      border-radius: 8px;
+    }
+    a {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔍 Buscador de Tarjetas QSL</h1>
+  <p>Ingresá tu indicativo para ver si tenemos tu tarjeta registrada</p>
+  <input type="text" id="indicativo" placeholder="Ej: CX3AAR">
+  <button onclick="buscarQSL()">Buscar</button>
+  <div id="resultado"></div>
 
-<script>
-function buscarQSL() {
-  const indicativo = document.getElementById("indicativo").value.toUpperCase().trim();
-  const ruta = `qsls/QSL_${indicativo}.jpg`;
-  const resultado = document.getElementById("resultado");
+  <script>
+    async function buscarQSL() {
+      const indicativo = document.getElementById("indicativo").value.toUpperCase();
+      const resultadoDiv = document.getElementById("resultado");
+      resultadoDiv.innerHTML = "";
 
-  const img = new Image();
-  img.onload = function() {
-    resultado.innerHTML = `<h3 style="color:limegreen;">QSL encontrada para ${indicativo}</h3>
-      <img src="${ruta}" alt="QSL ${indicativo}" style="max-width:100%; border:2px solid limegreen; margin-bottom:10px;">
-      <br><a href="${ruta}" download style="color:#4CAF50;">📥 Descargar QSL</a>`;
-  };
-  img.onerror = function() {
-    resultado.innerHTML = `<p style="color:red;">No se encontró tarjeta QSL para el indicativo ${indicativo}.</p>`;
-  };
-  img.src = ruta;
-}
-</script>
-<style>
-  body, html {
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    color: white;
-    height: 100%;
-    font-family: 'Courier New', monospace;
-  }
+      try {
+        const response = await fetch("data/qsl.json");
+        const data = await response.json();
 
-  .qsl-section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    padding: 40px 20px;
-    background-color: black;
-  }
-
-  h2 {
-    color: limegreen;
-    margin-bottom: 20px;
-  }
-
-  input, button {
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid limegreen;
-    background-color: #111;
-    color: #0f0;
-  }
-
-  a {
-    color: #4CAF50;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-  .resultado {
-    margin-top: 30px;
-    border: 2px solid limegreen;
-    padding: 20px;
-    background-color: #0b0b0b;
-  }
-
-  img {
-    max-width: 100%;
-    border: 2px solid limegreen;
-    margin-bottom: 10px;
-  }
-</style>
+        if (data[indicativo]) {
+          const imagenes = data[indicativo];
+          imagenes.forEach(img => {
+            const enlace = document.createElement("a");
+            enlace.href = img;
+            enlace.download = img.split("/").pop();
+            enlace.innerHTML = `<img src="${img}" alt="${indicativo}">`;
+            resultadoDiv.appendChild(enlace);
+          });
+        } else {
+          resultadoDiv.innerHTML = `<p>No se encontraron tarjetas para <strong>${indicativo}</strong>.</p>`;
+        }
+      } catch (error) {
+        resultadoDiv.innerHTML = "<p>Error al cargar las tarjetas.</p>";
+      }
+    }
+  </script>
+</body>
+</html>
