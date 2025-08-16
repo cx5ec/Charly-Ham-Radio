@@ -1,8 +1,12 @@
-<section style="background-color:black; color:white; padding:20px;">
-  <h2 style="color:limegreen;"> Buscar tu tarjeta QSL</h2>
-  <input type="text" id="indicativo" placeholder="Ej: CX5EC" style="padding:8px; width:200px;">
-  <button onclick="buscarQSL()" style="padding:8px; background-color:green; color:white; border:none;">Ver QSL</button>
-  <div id="resultado" style="margin-top:20px;"></div>
+<section style="background-color:black; color:white; padding:40px; text-align:center; border:2px solid limegreen; box-shadow: 0 0 20px limegreen;">
+  <h2 style="color:limegreen; font-family:'Orbitron', sans-serif; font-size:30px; text-shadow: 0 0 5px limegreen;">🛰️ Escaneo de Tarjetas QSL</h2>
+  <p style="font-family:'Courier New', monospace; font-size:16px;">Ingresá tu distintiva de llamada para consultar la tarjeta registrada por <strong>Estación Charly – CX5EC</strong></p>
+  
+  <input type="text" id="indicativo" placeholder="Ej: CX5EC" style="padding:12px; width:240px; border:1px solid limegreen; background-color:#111; color:#0f0; font-family:'Courier New', monospace;">
+  
+  <button onclick="buscarQSL()" style="padding:12px 24px; background-color:green; color:white; border:none; cursor:pointer; font-weight:bold; font-family:'Orbitron', sans-serif; margin-top:10px; animation: pulso 2s infinite;">🔎 Consultar QSL</button>
+  
+  <div id="resultado" style="margin-top:30px;"></div>
 </section>
 
 <script>
@@ -13,65 +17,44 @@ function buscarQSL() {
 
   const img = new Image();
   img.onload = function() {
-    resultado.innerHTML = `<h3 style="color:limegreen;">QSL encontrada para ${indicativo}</h3>
-      <img src="${ruta}" alt="QSL ${indicativo}" style="max-width:100%; border:2px solid limegreen; margin-bottom:10px;">
-      <br><a href="${ruta}" download style="color:#4CAF50;">📥 Descargar QSL</a>`;
+    resultado.innerHTML = `
+      <div style="border:2px solid limegreen; padding:20px; background-color:#0b0b0b; box-shadow: 0 0 10px limegreen;">
+        <h3 style="color:limegreen; font-family:'Orbitron', sans-serif;">✅ Tarjeta QSL encontrada para <span style="color:#4CAF50;">${indicativo}</span></h3>
+        <img src="${ruta}" alt="QSL ${indicativo}" style="max-width:100%; border:2px solid limegreen; margin-bottom:10px;">
+        <br><a href="${ruta}" download style="color:#4CAF50; font-weight:bold; font-family:'Courier New', monospace;">📥 Descargar tarjeta</a>
+      </div>`;
   };
   img.onerror = function() {
-    resultado.innerHTML = `<p style="color:red;">No se encontró tarjeta QSL para el indicativo ${indicativo}.</p>`;
+    resultado.innerHTML = `
+      <div style="border:2px solid red; padding:20px; background-color:#1a0000; box-shadow: 0 0 10px red;">
+        <p style="color:red; font-family:'Courier New', monospace;">❌ No se encontró tarjeta QSL para el indicativo <strong>${indicativo}</strong>. Verificá que esté correctamente escrito.</p>
+      </div>`;
   };
   img.src = ruta;
 }
 </script>
+
 <style>
+  @keyframes pulso {
+    0% { box-shadow: 0 0 5px limegreen; }
+    50% { box-shadow: 0 0 20px limegreen; }
+    100% { box-shadow: 0 0 5px limegreen; }
+  }
+
   body, html {
     margin: 0;
     padding: 0;
     background-color: black;
     color: white;
-    height: 100%;
     font-family: 'Courier New', monospace;
   }
 
-  .qsl-section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    padding: 40px 20px;
-    background-color: black;
+  button:hover {
+    background-color: #00cc00;
+    transform: scale(1.05);
   }
 
-  h2 {
-    color: limegreen;
-    margin-bottom: 20px;
-  }
-
-  input, button {
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid limegreen;
-    background-color: #111;
-    color: #0f0;
-  }
-
-  a {
-    color: #4CAF50;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-  .resultado {
-    margin-top: 30px;
-    border: 2px solid limegreen;
-    padding: 20px;
-    background-color: #0b0b0b;
-  }
-
-  img {
-    max-width: 100%;
-    border: 2px solid limegreen;
-    margin-bottom: 10px;
+  a:hover {
+    text-decoration: underline;
   }
 </style>
