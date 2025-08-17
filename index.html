@@ -5,6 +5,25 @@
   <title>Estación Charly – CX5EC</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    <script>
+  function updateUTC() {
+    const now = new Date();
+    const utcHours = now.getUTCHours().toString().padStart(2, '0');
+    const utcMinutes = now.getUTCMinutes().toString().padStart(2, '0');
+    const utcSeconds = now.getUTCSeconds().toString().padStart(2, '0');
+    document.getElementById('utcClock').textContent = `UTC ${utcHours}:${utcMinutes}:${utcSeconds}`;
+  }
+  setInterval(updateUTC, 1000);
+  updateUTC();
+<!-- Google Analytics CX5EC -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
     body {
       background-color: #000;
       color: #00ff00;
@@ -127,24 +146,5 @@
   }
 </style>
 
-
-<script>
-  function updateUTC() {
-    const now = new Date();
-    const utcHours = now.getUTCHours().toString().padStart(2, '0');
-    const utcMinutes = now.getUTCMinutes().toString().padStart(2, '0');
-    const utcSeconds = now.getUTCSeconds().toString().padStart(2, '0');
-    document.getElementById('utcClock').textContent = `UTC ${utcHours}:${utcMinutes}:${utcSeconds}`;
-  }
-  setInterval(updateUTC, 1000);
-  updateUTC();
-<!-- Google Analytics CX5EC -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
 </script>
 
-</script>
