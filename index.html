@@ -113,6 +113,38 @@
   <footer>
     <p>© 2025 Estación Charly • CX5EC • Todos los derechos reservados</p>
   </footer>
+  <!-- Reloj UTC táctico CX5EC -->
+<div id="utc-clock" class="reloj-utc"></div>
+
+<style>
+.reloj-utc {
+  font-family: 'Orbitron', sans-serif;
+  color: #00ff00;
+  background-color: #000;
+  padding: 10px 20px;
+  font-size: 1.4em;
+  text-align: center;
+  border: 1px solid #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+  animation: fadeIn 2s ease-in;
+  margin-top: 20px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
+
+<script>
+function updateUTCClock() {
+  const now = new Date();
+  const utcTime = now.toUTCString().slice(17, 25);
+  document.getElementById('utc-clock').textContent = `UTC ${utcTime}`;
+}
+setInterval(updateUTCClock, 1000);
+updateUTCClock();
+</script>
+
 </body>
 </html>
 
