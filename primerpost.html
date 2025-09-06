@@ -914,6 +914,27 @@ La foto muestra mi shack actual.<br>
   <div class="separador"></div>
 
   <p class="firma">Publicado por CX5EC – San José de Mayo, agosto 2025</p>
+<!-- Audio institucional CX5EC -->
+<audio id="audio-cx5ec" loop>
+  <source src="../audio/identificador-cx5ec.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    const audio = document.getElementById('audio-cx5ec');
+
+    function activarAudio() {
+      if (audio.paused) {
+        audio.play().catch(function(error) {
+          console.warn("Error al reproducir el audio:", error);
+        });
+      }
+      document.removeEventListener('click', activarAudio);
+    }
+
+    document.addEventListener('click', activarAudio);
+  });
+</script>
 
 </body>
 </html>
