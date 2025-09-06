@@ -145,6 +145,23 @@
 <!-- Audio institucional CX5EC -->
 <audio id="audio-cx5ec" loop>
   <source src="audio/identificador-cx5ec.mp3" type="audio/mpeg">
+  <!-- Audio institucional CX5EC -->
+<audio id="audio-cx5ec" loop>
+  <source src="audio/identificador-cx5ec.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Script que activa el audio al hacer clic en el botón -->
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    const audio = document.getElementById('audio-cx5ec');
+    const botonBlog = document.querySelector('.boton-principal-grande');
+
+    botonBlog.addEventListener('click', function () {
+      audio.play();
+    });
+  });
+</script>
+
 </audio>
 
 </style>
