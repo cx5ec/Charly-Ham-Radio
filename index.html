@@ -177,6 +177,29 @@
 </script>
 
 </audio>
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    const audio = document.getElementById('audio-cx5ec');
+    const botonBlog = document.querySelector('.boton-principal-grande');
+    const escudo = document.querySelector('.escudo img');
+
+    function activarAudio() {
+      if (audio && audio.paused) {
+        audio.play().catch(function(error) {
+          console.warn("Error al reproducir el audio:", error);
+        });
+      }
+    }
+
+    if (botonBlog) {
+      botonBlog.addEventListener('click', activarAudio);
+    }
+
+    if (escudo) {
+      escudo.addEventListener('click', activarAudio);
+    }
+  });
+</script>
 
 </style>
 </script>
