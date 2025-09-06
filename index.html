@@ -147,57 +147,7 @@
   <source src="audio/identificador-cx5ec.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Botón con estilo CX5EC y activación de audio -->
-<a href="https://cx5ec.github.io/Charly-Ham-Radio/" 
-   onclick="activarAudio()" 
-   target="_blank" 
-   class="boton-cx5ec">
-  Entrá al blog
-</a>
-
-<!-- Estilos visuales -->
-<style>
-.boton-cx5ec {
-  background-color: #000;
-  color: #00ff00; /* Verde CX5EC */
-  border: 2px solid #00ff00;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
-}
-
-.boton-cx5ec:hover {
-  box-shadow: 0 0 10px #00ff00;
-  transform: scale(1.05);
-}
-
-.boton-cx5ec:active {
-  box-shadow: 0 0 20px #00ff00;
-}
 </style>
-
-<!-- Script que activa el audio tras la carga o clic en el botón -->
-<script>
-  window.addEventListener('DOMContentLoaded', function () {
-    const audio = document.getElementById('audio-cx5ec');
-
-    function activarAudio() {
-      audio.play();
-      document.removeEventListener('click', activarAudio);
-    }
-
-    // Activación general al primer clic
-    document.addEventListener('click', activarAudio);
-
-    // Activación específica desde el botón
-    window.activarAudio = activarAudio;
-  });
-</script>
-</script>
-
-</body>
-</html>
 </script>
 
 </body>
