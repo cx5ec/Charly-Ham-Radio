@@ -131,6 +131,7 @@
       <a href="qsl.html" class="boton-tactico">QSL</a>
       <a href="boletines.html" class="boton-tactico">Boletines</a>
       <a href="galeria.html" class="boton-tactico">Galería</a>
+      <a href="sobremi.html" class="boton-tactico">Sobre mi</a>
       <a href="contacto.html" class="boton-tactico">Contacto</a>
     </div>
   </section>
@@ -141,77 +142,37 @@
 
   <div id="utc-clock" class="reloj-utc">00:00:00 UTC</div>
 
-<!-- Contenido principal del blog -->
-  <!-- Audio institucional CX5EC -->
-<audio id="audio-cx5ec" loop>
-  <source src="audio/identificador-cx5ec.mp3" type="audio/mpeg">
-</audio>
-
-<!-- Script que activa el audio al hacer clic en el botón -->
-<script>
-  window.addEventListener('DOMContentLoaded', function () {
-    const audio = document.getElementById('audio-cx5ec');
-    const botonBlog = document.querySelector('.boton-principal-grande');
-
-    botonBlog.addEventListener('click', function () {
-      audio.play();
-    });
-  });<script>
-  window.addEventListener('DOMContentLoaded', function () {
-    const audio = document.getElementById('audio-cx5ec');
-    const botonBlog = document.querySelector('.boton-principal-grande');
-    const escudo = document.querySelector('.escudo img');
-
-    function activarAudio() {
-      audio.play();
-    }
-
-    // Activación al hacer clic en el botón
-    botonBlog.addEventListener('click', activarAudio);
-
-    // Activación al hacer clic en el escudo
-    escudo.addEventListener('click', activarAudio);
-  });
-</script>
-
-</script>
-
-</audio>
-<script>
-  window.addEventListener('DOMContentLoaded', function () {
-    const audio = document.getElementById('audio-cx5ec');
-    const botonBlog = document.querySelector('.boton-principal-grande');
-    const escudo = document.querySelector('.escudo img');
-
-    function activarAudio() {
-      if (audio && audio.paused) {
-        audio.play().catch(function(error) {
-          console.warn("Error al reproducir el audio:", error);
-        });
-      }
-    }
-
-    if (botonBlog) {
-      botonBlog.addEventListener('click', activarAudio);
-    }
-
-    if (escudo) {
-      escudo.addEventListener('click', activarAudio);
-    }
-  });
-</script>
-
-</style>
-</script>
-
-</body>
-</html>
+  <audio id="audio-cx5ec" loop>
+    <source src="audio/identificador-cx5ec.mp3" type="audio/mpeg">
+  </audio>
 
   <footer>
     <p>© 2025 Estación Charly • CX5EC • Todos los derechos reservados</p>
   </footer>
 
   <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const audio = document.getElementById('audio-cx5ec');
+      const botonBlog = document.querySelector('.boton-principal-grande');
+      const escudo = document.querySelector('.escudo img');
+
+      function activarAudio() {
+        if (audio && audio.paused) {
+          audio.play().catch(function(error) {
+            console.warn("Error al reproducir el audio:", error);
+          });
+        }
+      }
+
+      if (botonBlog) {
+        botonBlog.addEventListener('click', activarAudio);
+      }
+
+      if (escudo) {
+        escudo.addEventListener('click', activarAudio);
+      }
+    });
+
     function updateUTCClock() {
       const now = new Date();
       const hours = now.getUTCHours().toString().padStart(2, '0');
@@ -223,7 +184,6 @@
     updateUTCClock();
   </script>
 
-  <!-- Google Analytics CX5EC -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
