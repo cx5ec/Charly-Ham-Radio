@@ -28,12 +28,12 @@
       font-family: 'Segoe UI', sans-serif;
       padding: 20px;
     }
-    h1 {
+    h1, h2 {
       color: #39ff14;
       text-align: center;
       text-shadow: 0 0 5px #39ff14;
     }
-    select, button {
+    select, button, textarea {
       margin: 10px 5px;
       padding: 8px;
       background-color: #1f1f1f;
@@ -77,11 +77,36 @@
       text-align: center;
       margin-bottom: 20px;
     }
+    .mapa, .reporte {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #1f1f1f;
+      border-radius: 8px;
+    }
+    .reporte textarea {
+      width: 100%;
+      height: 100px;
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      border: 1px solid #39ff14;
+      padding: 10px;
+      resize: vertical;
+    }
+    .reporte button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #39ff14;
+      color: #0a0a0a;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <h1>Repetidoras VHF/UHF y Echolink – Uruguay</h1>
 
+  <!-- FILTROS -->
   <div class="filtros">
     <label for="departamento">Departamento:</label>
     <select id="departamento" onchange="filtrarTabla()">
@@ -111,6 +136,7 @@
     <button onclick="resetFiltros()">Restablecer filtros</button>
   </div>
 
+  <!-- TABLA -->
   <table id="tablaRepetidoras">
     <caption>Listado nacional actualizado</caption>
     <thead>
@@ -125,21 +151,38 @@
       </tr>
     </thead>
     <tbody>
+      <!-- Repetidoras: agregá aquí todas las filas necesarias -->
       <tr><td>147.150 MHz</td><td>+600 kHz</td><td>Atlántida</td><td>Canelones</td><td>CX2DXX</td><td>FM / Echolink</td><td><a href="https://www.echolink.org/" target="_blank">Nodo activo</a></td></tr>
       <tr><td>146.925 MHz</td><td>-600 kHz</td><td>Santa Lucía</td><td>Canelones</td><td>—</td><td>FM</td><td>—</td></tr>
       <tr><td>145.330 MHz</td><td>-600 kHz</td><td>Tarariras</td><td>Colonia</td><td>CX2FXX</td><td>FM</td><td>—</td></tr>
       <tr><td>147.330 MHz</td><td>+600 kHz</td><td>Melo</td><td>Cerro Largo</td><td>R.C. Melo</td><td>FM / Echolink</td><td><a href="https://www.echolink.org/" target="_blank">Nodo activo</a></td></tr>
       <tr><td>145.450 MHz</td><td>-600 kHz</td><td>Río Branco</td><td>Cerro Largo</td><td>CX2VXX</td><td>FM</td><td>—</td></tr>
-      <tr><td>145.375 MHz</td><td>-600 kHz</td><td>Sarandí de Yí</td><td>Durazno</td><td>—</td><td>FM</td><td>—</td></tr>
-      <tr><td>146.640 MHz</td><td>-600 kHz</td><td>Minas</td><td>Lavalleja</td><td>CX3SXX</td><td>FM</td><td>—</td></tr>
-      <tr><td>145.490 MHz</td><td>-600 kHz</td><td>Punta del Este</td><td>Maldonado</td><td>CX1RXX</td><td>FM</td><td>—</td></tr>
-      <tr><td>147.180 MHz</td><td>+600 kHz</td><td>San Carlos</td><td>Maldonado</td><td>CX4RXX</td><td>FM</td><td>—</td></tr>
-      <tr><td>147.090 MHz</td><td>+600 kHz</td><td>Piriápolis</td><td>Maldonado</td><td>CX4RXX</td><td>FM</td><td>—</td></tr>
-      <tr><td>147.240 MHz</td><td>+600 kHz</td><td>Fortaleza</td><td>Montevideo</td><td>CX2AXX</td><td>FM</td><td>—</td></tr>
-      <tr><td>146.850 MHz</td><td>-600 kHz</td><td>SAETA</td><td>Montevideo</td><td>—</td><td>FM</td><td>—</td></tr>
-      <tr><td>146.610 MHz</td><td>-600 kHz</td><td>Cerro</td><td>Montevideo</td><td>—</td><td>FM</td><td>—</td></tr>
-      <tr><td>146.760 MHz</td><td>-600 kHz</td><td>Club Uruguayo VHF</td><td>Montevideo</td><td>—</td><td>FM</td><td>—</td></tr>
-      <tr><td>147.210 MHz</td><td>+600 kHz</td><td>LUPO</td><td>Montevideo</td><td>CX9CXX</td><td>FM</td><td>—</td></tr>
-      <tr><td>147.060 MHz</td><td>+600 kHz</td><td>Rivera</td><td>Rivera</td><td>CX2PXX</td><td>FM</td><td>—</td></tr>
       <tr><td>144.870 MHz</td><td>+600 kHz</td><td>Rocha</td><td>Rocha</td><td>CX1TXX</td><td>FM</td><td>—</td></tr>
       <tr><td>146.335 MHz</td><td>+600 kHz</td><td>Rocha</td><td>Rocha</td><td>CX2TXX</td><td>FM</td><td>—</td></tr>
+      <tr><td>145.355 MHz</td><td>-600 kHz</td><td>Rocha</td><td>Rocha</td><td>—</td><td>FM</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <!-- MAPA -->
+  <div class="mapa">
+    <h2> Mapa de cobertura nacional</h2>
+    <p>Visualizá las ubicaciones en el <a href="https://www.ursec.gub.uy/" target="_blank">mapa oficial de URSEC</a>.</p>
+  </div>
+
+  <!-- REPORTE -->
+  <div class="reporte">
+    <h2> Reporte comunitario</h2>
+    <p>¿Detectaste una repetidora fuera de servicio, interferencias o cambios de frecuencia?</p>
+    <form action="https://formsubmit.co/cx5ecl@gmail.com" method="POST">
+      <textarea name="reporte" placeholder="Escribí tu reporte aquí..." required></textarea>
+      <input type="hidden" name="_next" value="https://charly-ham-radio.github.io/agradecimiento.html">
+      <input type="hidden" name="_captcha" value="false">
+      <button type="submit">Enviar reporte</button>
+    </form>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    function filtrarTabla() {
+      const departamento = document.getElementById("departamento").value;
+      const modo =
