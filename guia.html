@@ -16,7 +16,199 @@
     <li>🛡️ <a href="https://www.hamstudy.org/" style="color:#aaff00;" target="_blank">HamStudy – Estudio para licencias (inglés)</a></li>
   </ul>
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Repetidoras VHF/UHF y Echolink – Uruguay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: #39ff14;
+      text-align: center;
+      text-shadow: 0 0 5px #39ff14;
+    }
+    select {
+      margin: 10px 5px;
+      padding: 5px;
+      background-color: #1f1f1f;
+      color: #39ff14;
+      border: 1px solid #39ff14;
+      border-radius: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #39ff14;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #1f1f1f;
+      color: #39ff14;
+    }
+    tr:nth-child(even) {
+      background-color: #1a1a1a;
+    }
+    caption {
+      caption-side: top;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #81c784;
+    }
+  </style>
+</head>
+<body>
+  <h1>Repetidoras VHF/UHF y Echolink – Uruguay</h1>
 
+  <label for="departamento">Departamento:</label>
+  <select id="departamento" onchange="filtrarTabla()">
+    <option value="">Todos</option>
+    <option value="Artigas">Artigas</option>
+    <option value="Canelones">Canelones</option>
+    <option value="Colonia">Colonia</option>
+    <option value="Cerro Largo">Cerro Largo</option>
+    <option value="Durazno">Durazno</option>
+    <option value="Florida">Florida</option>
+    <option value="Lavalleja">Lavalleja</option>
+    <option value="Maldonado">Maldonado</option>
+    <option value="Montevideo">Montevideo</option>
+    <option value="Paysandú">Paysandú</option>
+    <option value="Rivera">Rivera</option>
+    <option value="Rocha">Rocha</option>
+    <option value="Salto">Salto</option>
+    <option value="San José">San José</option>
+    <option value="Soriano">Soriano</option>
+    <option value="Tacuarembó">Tacuarembó</option>
+    <option value="Treinta y Tres">Treinta y Tres</option>
+  </select>
+
+  <label for="modo">Modo:</label>
+  <select id="modo" onchange="filtrarTabla()">
+    <option value="">Todos</option>
+    <option value="FM">FM</option>
+    <option value="FM / Echolink">FM / Echolink</option>
+    <option value="D-Star">D-Star</option>
+    <option value="Fusion">Fusion</option>
+  </select>
+
+  <table id="tablaRepetidoras">
+    <caption>Listado nacional actualizado</caption>
+    <thead>
+      <tr>
+        <th>Frecuencia</th>
+        <th>Desplazamiento</th>
+        <th>Ubicación</th>
+        <th>Departamento</th>
+        <th>Club / Indicativo</th>
+        <th>Modo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>146.610 MHz</td>
+        <td>-600 kHz</td>
+        <td>Baltasar Brum</td>
+        <td>Artigas</td>
+        <td>CX1KXX</td>
+        <td>FM</td>
+      </tr>
+      <tr>
+        <td>147.150 MHz</td>
+        <td>+600 kHz</td>
+        <td>Atlántida</td>
+        <td>Canelones</td>
+        <td>CX2DXX</td>
+        <td>FM / Echolink</td>
+      </tr>
+      <tr>
+        <td>145.330 MHz</td>
+        <td>-600 kHz</td>
+        <td>Tarariras</td>
+        <td>Colonia</td>
+        <td>CX2FXX</td>
+        <td>FM</td>
+      </tr>
+      <tr>
+        <td>146.970 MHz</td>
+        <td>-600 kHz</td>
+        <td>Melo</td>
+        <td>Cerro Largo</td>
+        <td>R.C. Melo</td>
+        <td>FM</td>
+      </tr>
+      <tr>
+        <td>147.165 MHz</td>
+        <td>+600 kHz</td>
+        <td>Nueva Palmira</td>
+        <td>Colonia</td>
+        <td>R.C. Colonia</td>
+        <td>FM</td>
+      </tr>
+      <tr>
+        <td>147.330 MHz</td>
+        <td>+600 kHz</td>
+        <td>Melo</td>
+        <td>Cerro Largo</td>
+        <td>R.C. Melo</td>
+        <td>FM / Echolink</td>
+      </tr>
+      <tr>
+        <td>146.925 MHz</td>
+        <td>-600 kHz</td>
+        <td>Santa Lucía</td>
+        <td>Canelones</td>
+        <td>CX2DXX</td>
+        <td>FM</td>
+      </tr>
+      <tr>
+        <td>145.700 MHz</td>
+        <td>-600 kHz</td>
+        <td>Puerto Sauce</td>
+        <td>Colonia</td>
+        <td>R.C. Colonia</td>
+        <td>FM</td>
+      </tr>
+      <tr>
+        <td>146.940 MHz</td>
+        <td>-600 kHz</td>
+        <td>Tomas Gomensoro</td>
+        <td>Artigas</td>
+        <td>—</td>
+        <td>FM</td>
+      </tr>
+      <!-- Aquí podés agregar más filas según el listado completo -->
+    </tbody>
+  </table>
+
+  <script>
+    function filtrarTabla() {
+      const dept = document.getElementById("departamento").value.toLowerCase();
+      const modo = document.getElementById("modo").value.toLowerCase();
+      const filas = document.querySelectorAll("#tablaRepetidoras tbody tr");
+
+      filas.forEach(fila => {
+        const departamento = fila.cells[3].textContent.toLowerCase();
+        const modoTexto = fila.cells[5].textContent.toLowerCase();
+
+        const mostrar = (!dept || departamento.includes(dept)) &&
+                        (!modo || modoTexto.includes(modo));
+
+        fila.style.display = mostrar ? "" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
 
   
   <p style="margin-top:30px;">¿Querés sugerir un nuevo recurso? Escribime a <a href="mailto:cx5ecl@gmail.com" style="color:#aaff00;">cx5ecl@gmail.com</a> y sumalo al arsenal de herramientas tácticas.</p>
