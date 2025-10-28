@@ -29,7 +29,7 @@
       font-family: 'Segoe UI', sans-serif;
       padding: 20px;
     }
-    h1 {
+    h1, h2 {
       color: #39ff14;
       text-align: center;
       text-shadow: 0 0 5px #39ff14;
@@ -74,6 +74,33 @@
     a:hover {
       text-decoration: underline;
     }
+<<<<<<< HEAD
+=======
+    .mapa, .reporte {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #1f1f1f;
+      border-radius: 8px;
+    }
+    .reporte textarea {
+      width: 100%;
+      height: 100px;
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      border: 1px solid #39ff14;
+      padding: 10px;
+      resize: vertical;
+    }
+    .reporte button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #39ff14;
+      color: #0a0a0a;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+>>>>>>> 5c4c85191d9a0a522e87f2cfcd3bf0f715ad5a6c
     .filtros {
       text-align: center;
       margin-bottom: 20px;
@@ -92,6 +119,7 @@
       <option value="Colonia">Colonia</option>
       <option value="Cerro Largo">Cerro Largo</option>
       <option value="Durazno">Durazno</option>
+<<<<<<< HEAD
       <option value="Lavalleja">Lavalleja</option>
       <option value="Maldonado">Maldonado</option>
       <option value="Montevideo">Montevideo</option>
@@ -99,6 +127,19 @@
       <option value="Rocha">Rocha</option>
       <option value="San José">San José</option>
       <option value="Soriano">Soriano</option>
+=======
+      <option value="Florida">Florida</option>
+      <option value="Lavalleja">Lavalleja</option>
+      <option value="Maldonado">Maldonado</option>
+      <option value="Montevideo">Montevideo</option>
+      <option value="Paysandú">Paysandú</option>
+      <option value="Rivera">Rivera</option>
+      <option value="Rocha">Rocha</option>
+      <option value="Salto">Salto</option>
+      <option value="San José">San José</option>
+      <option value="Soriano">Soriano</option>
+      <option value="Tacuarembó">Tacuarembó</option>
+>>>>>>> 5c4c85191d9a0a522e87f2cfcd3bf0f715ad5a6c
       <option value="Treinta y Tres">Treinta y Tres</option>
     </select>
 
@@ -107,6 +148,11 @@
       <option value="">Todos</option>
       <option value="FM">FM</option>
       <option value="FM / Echolink">FM / Echolink</option>
+<<<<<<< HEAD
+=======
+      <option value="D-Star">D-Star</option>
+      <option value="Fusion">Fusion</option>
+>>>>>>> 5c4c85191d9a0a522e87f2cfcd3bf0f715ad5a6c
     </select>
 
     <button onclick="resetFiltros()">Restablecer filtros</button>
@@ -126,6 +172,7 @@
       </tr>
     </thead>
     <tbody>
+<<<<<<< HEAD
       <tr><td>147.150 MHz</td><td>+600 kHz</td><td>Atlántida</td><td>Canelones</td><td>CX2DXX</td><td>FM / Echolink</td><td><a href="https://www.echolink.org/" target="_blank">Nodo activo</a></td></tr>
       <tr><td>146.925 MHz</td><td>-600 kHz</td><td>Santa Lucía</td><td>Canelones</td><td>—</td><td>FM</td><td>—</td></tr>
       <tr><td>145.330 MHz</td><td>-600 kHz</td><td>Tarariras</td><td>Colonia</td><td>CX2FXX</td><td>FM</td><td>—</td></tr>
@@ -151,6 +198,50 @@
 
   <div class="reporte">
     <h2> Reporte comunitario</h2>
+    <p>¿Detectaste una repetidora fuera de servicio, interferencias o cambios de frecuencia? Compartilo con nosotros:</p>
+    <textarea placeholder="Escribí tu reporte aquí..."></textarea>
+    <button onclick="alert('¡Gracias por tu aporte!')">Enviar reporte</button>
+  </div>
+=======
+      <tr>
+        <td>147.150 MHz</td>
+        <td>+600 kHz</td>
+        <td>Atlántida</td>
+        <td>Canelones</td>
+        <td>CX2DXX</td>
+        <td>FM / Echolink</td>
+        <td><a href="https://www.echolink.org/" target="_blank">Nodo activo</a></td>
+      </tr>
+      <tr>
+        <td>147.330 MHz</td>
+        <td>+600 kHz</td>
+        <td>Melo</td>
+        <td>Cerro Largo</td>
+        <td>R.C. Melo</td>
+        <td>FM / Echolink</td>
+        <td><a href="https://www.echolink.org/" target="_blank">Nodo activo</a></td>
+      </tr>
+      <tr>
+        <td>145.330 MHz</td>
+        <td>-600 kHz</td>
+        <td>Tarariras</td>
+        <td>Colonia</td>
+        <td>CX2FXX</td>
+        <td>FM</td>
+        <td>—</td>
+      </tr>
+      <!-- Agregá más filas según el listado completo -->
+    </tbody>
+  </table>
+>>>>>>> 5c4c85191d9a0a522e87f2cfcd3bf0f715ad5a6c
+
+  <div class="mapa">
+    <h2>🗺️ Mapa de cobertura nacional</h2>
+    <p>Visualizá las ubicaciones en el <a href="https://www.gub.uy/unidad-reguladora-servicios-comunicaciones/datos-y-estadisticas/datos/mapa-geolocalizacion-repetidoras-radiofaros-del-servicio-radioaficionados" target="_blank">mapa oficial de URSEC</a>.</p>
+  </div>
+
+  <div class="reporte">
+    <h2>📢 Reporte comunitario</h2>
     <p>¿Detectaste una repetidora fuera de servicio, interferencias o cambios de frecuencia? Compartilo con nosotros:</p>
     <textarea placeholder="Escribí tu reporte aquí..."></textarea>
     <button onclick="alert('¡Gracias por tu aporte!')">Enviar reporte</button>
