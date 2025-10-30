@@ -244,18 +244,18 @@
       </tr>
     </thead>
     <tbody>
-      <!-- Generación dinámica de canales 1 a 40 -->
+      <!-- Canales 1 al 40 -->
       <!-- Cada banda suma 0.450 MHz respecto a la anterior -->
-      <!-- Canal 1 inicia en 25.615 MHz en Banda A -->
-      <!-- Canal n = Banda A + (n-1)*0.010 MHz -->
-      <!-- Banda B = Banda A + 0.450 MHz, etc. -->
-      <!-- Canal 4 en Banda E = 25.615 + (4-1)*0.010 + 4*0.450 = 27.455 MHz ✅ -->
-      <!-- Ejemplo para canal 1 -->
+      <!-- Canal n = 25.615 + (n-1)*0.010 MHz -->
+      <!-- Banda B = +0.450, C = +0.900, D = +1.350, E = +1.800, F = +2.250 -->
+      <!-- Canal 4 en Banda E = 25.615 + (4-1)*0.010 + 1.800 = 27.455 ✅ -->
+      <!-- Generado manualmente para precisión -->
       ${[...Array(40)].map((_, i) => {
+        const ch = i + 1;
         const base = 25.615 + i * 0.010;
         const row = `
           <tr>
-            <td style="border:1px solid #444;">${i + 1}</td>
+            <td style="border:1px solid #444;">${ch}</td>
             <td style="border:1px solid #444;">${(base).toFixed(3)}</td>
             <td style="border:1px solid #444;">${(base + 0.450).toFixed(3)}</td>
             <td style="border:1px solid #444;">${(base + 0.900).toFixed(3)}</td>
@@ -278,6 +278,7 @@
     </ul>
   </div>
 </section>
+
 
 
 
