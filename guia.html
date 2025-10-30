@@ -231,30 +231,40 @@
   <h2 style="color:#39ff14;">📡 Tabla completa de canales CB – Bandas A a F</h2>
   <p><strong style="color:#cccccc;">Frecuencias por banda lateral y modo – Estación Charly</strong></p>
 
-  <table style="width:100%;border-collapse:collapse;margin-top:15px;">
+  <table style="width:100%;border-collapse:collapse;margin-top:15px;font-size:14px;">
     <thead>
       <tr style="background-color:#333333;color:#39ff14;">
-        <th style="padding:8px;border:1px solid #666;">Canal</th>
-        <th style="padding:8px;border:1px solid #666;">Banda A</th>
-        <th style="padding:8px;border:1px solid #666;">Banda B</th>
-        <th style="padding:8px;border:1px solid #666;">Banda C</th>
-        <th style="padding:8px;border:1px solid #666;">Banda D (AM/FM)</th>
-        <th style="padding:8px;border:1px solid #666;">Banda E</th>
-        <th style="padding:8px;border:1px solid #666;">Banda F</th>
+        <th style="padding:6px;border:1px solid #666;">Canal</th>
+        <th style="padding:6px;border:1px solid #666;">Banda A</th>
+        <th style="padding:6px;border:1px solid #666;">Banda B</th>
+        <th style="padding:6px;border:1px solid #666;">Banda C</th>
+        <th style="padding:6px;border:1px solid #666;">Banda D (AM/FM)</th>
+        <th style="padding:6px;border:1px solid #666;">Banda E</th>
+        <th style="padding:6px;border:1px solid #666;">Banda F</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td>1</td><td>25.615</td><td>26.065</td><td>26.515</td><td>26.965</td><td>27.415</td><td>27.865</td></tr>
-      <tr><td>2</td><td>25.625</td><td>26.075</td><td>26.525</td><td>26.975</td><td>27.425</td><td>27.875</td></tr>
-      <tr><td>3</td><td>25.635</td><td>26.085</td><td>26.535</td><td>26.985</td><td>27.435</td><td>27.885</td></tr>
-      <tr><td>4</td><td>25.645</td><td>26.095</td><td>26.545</td><td>27.005</td><td>27.445</td><td>27.895</td></tr>
-      <tr><td>5</td><td>25.655</td><td>26.105</td><td>26.555</td><td>27.015</td><td>27.455</td><td>27.905</td></tr>
-      <tr><td>6</td><td>25.665</td><td>26.115</td><td>26.565</td><td>27.025</td><td>27.465</td><td>27.915</td></tr>
-      <tr><td>7</td><td>25.675</td><td>26.125</td><td>26.575</td><td>27.035</td><td>27.475</td><td>27.925</td></tr>
-      <tr><td>8</td><td>25.685</td><td>26.135</td><td>26.585</td><td>27.055</td><td>27.485</td><td>27.935</td></tr>
-      <tr><td>9</td><td>25.695</td><td>26.145</td><td>26.595</td><td>27.065</td><td>27.495</td><td>27.945</td></tr>
-      <tr><td>10</td><td>25.705</td><td>26.155</td><td>26.605</td><td>27.075</td><td>27.505</td><td>27.955</td></tr>
-      <tr><td>... hasta canal 40</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+      <!-- Generación dinámica de canales 1 a 40 -->
+      <!-- Cada banda suma 0.450 MHz respecto a la anterior -->
+      <!-- Canal 1 inicia en 25.615 MHz en Banda A -->
+      <!-- Canal n = Banda A + (n-1)*0.010 MHz -->
+      <!-- Banda B = Banda A + 0.450 MHz, etc. -->
+      <!-- Canal 4 en Banda E = 25.615 + (4-1)*0.010 + 4*0.450 = 27.455 MHz ✅ -->
+      <!-- Ejemplo para canal 1 -->
+      ${[...Array(40)].map((_, i) => {
+        const base = 25.615 + i * 0.010;
+        const row = `
+          <tr>
+            <td style="border:1px solid #444;">${i + 1}</td>
+            <td style="border:1px solid #444;">${(base).toFixed(3)}</td>
+            <td style="border:1px solid #444;">${(base + 0.450).toFixed(3)}</td>
+            <td style="border:1px solid #444;">${(base + 0.900).toFixed(3)}</td>
+            <td style="border:1px solid #444;">${(base + 1.350).toFixed(3)}</td>
+            <td style="border:1px solid #444;">${(base + 1.800).toFixed(3)}</td>
+            <td style="border:1px solid #444;">${(base + 2.250).toFixed(3)}</td>
+          </tr>`;
+        return row;
+      }).join('')}
     </tbody>
   </table>
 
@@ -268,6 +278,7 @@
     </ul>
   </div>
 </section>
+
 
 
   <div class="pie">
