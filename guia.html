@@ -18,7 +18,7 @@
 <!-- 🔻 Separador institucional Estación Charly -->
 <hr style="border: none; height: 2px; background: linear-gradient(to right, #1a1a1a, #4d4d4d); margin: 2em 0;">
 
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -31,19 +31,10 @@
       font-family: 'Segoe UI', sans-serif;
       padding: 20px;
     }
-    h1, h2 {
+    h1 {
       color: #39ff14;
       text-align: center;
       text-shadow: 0 0 5px #39ff14;
-    }
-    select, button, textarea {
-      margin: 10px 5px;
-      padding: 8px;
-      background-color: #1f1f1f;
-      color: #39ff14;
-      border: 1px solid #39ff14;
-      border-radius: 4px;
-      font-weight: bold;
     }
     table {
       width: 100%;
@@ -76,81 +67,14 @@
     a:hover {
       text-decoration: underline;
     }
-    .filtros {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .mapa, .reporte, .pie {
-      margin-top: 40px;
-      padding: 20px;
-      background-color: #1f1f1f;
-      border-radius: 8px;
-    }
-    .reporte textarea {
-      width: 100%;
-      height: 100px;
-      background-color: #0a0a0a;
-      color: #e0e0e0;
-      border: 1px solid #39ff14;
-      padding: 10px;
-      resize: vertical;
-    }
-    .reporte button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #39ff14;
-      color: #0a0a0a;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .pie {
-      text-align: center;
-      font-size: 0.9em;
-      color: #81c784;
-    }
   </style>
 </head>
 <body>
   <h1>Repetidoras VHF/UHF y Echolink – Uruguay</h1>
 
-  <div class="filtros">
-    <label for="departamento">Departamento:</label>
-    <select id="departamento" onchange="filtrarTabla()">
-      <option value="">Todos</option>
-      <option value="Artigas">Artigas</option>
-      <option value="Canelones">Canelones</option>
-      <option value="Colonia">Colonia</option>
-      <option value="Cerro Largo">Cerro Largo</option>
-      <option value="Durazno">Durazno</option>
-      <option value="Lavalleja">Lavalleja</option>
-      <option value="Maldonado">Maldonado</option>
-      <option value="Montevideo">Montevideo</option>
-      <option value="Paysandú">Paysandú</option>
-      <option value="Río Negro">Río Negro</option>
-      <option value="Rivera">Rivera</option>
-      <option value="Rocha">Rocha</option>
-      <option value="Salto">Salto</option>
-      <option value="San José">San José</option>
-      <option value="Soriano">Soriano</option>
-      <option value="Tacuarembó">Tacuarembó</option>
-      <option value="Treinta y Tres">Treinta y Tres</option>
-    </select>
-
-    <label for="modo">Modo:</label>
-    <select id="modo" onchange="filtrarTabla()">
-      <option value="">Todos</option>
-      <option value="FM">FM</option>
-      <option value="FM / Echolink">FM / Echolink</option>
-    </select>
-
-    <button onclick="resetFiltros()">Restablecer filtros</button>
-  </div>
-
   <table id="tablaRepetidoras">
-    <caption>SITIO EN CONSTRUCCIÓN, PUEDE CONTENER ERRORES</caption>
+    <caption>Listado nacional – Estación Charly CX5EC</caption>
     <thead>
-  
       <tr>
         <th>Frecuencia</th>
         <th>Desplazamiento</th>
@@ -163,35 +87,49 @@
       </tr>
     </thead>
     <tbody>
-          <tbody>
-  <tr><td>146.520 MHz</td><td>Canal</td><td>de</td><td>encuentro</td><td>---</td><td>Internacional</td><td>FM</td><td>—</td></tr>          
-  <tr><td>223.500 MHz</td><td>Canal</td><td>de</td><td>encuentro</td><td>---</td><td>Internacional</td><td>FM</td><td>—</td></tr>
-  <tr><td>145.610 MHz</td><td>-600 kHz</td><td>82.5</td><td>Artigas</td><td>Artigas</td><td>CX1KXX</td><td>FM</td><td>—</td></tr>
-  <tr><td>147.150 MHz</td><td>+600 kHz</td><td>100</td><td>Canelones</td><td>Las Piedras</td><td>CX6DXX</td><td>FM / Echolink</td><td><a href="#">Nodo activo</a></td></tr>
-  <tr><td>147.000 MHz</td><td>-600 kHz</td><td>82.5</td><td>Canelones</td><td>Juanicó</td><td>CX3DXX</td><td>FM</td><td>—</td></tr>
-  <tr><td>145.330 MHz</td><td>+600 kHz</td><td>88.5</td><td>Colonia</td><td>Tarariras</td><td>CX2FXX</td><td>FM</td><td>—</td></tr>
-  <tr><td>432.850 MHz</td><td>+5000 kHz</td><td>88.5</td><td>Colonia</td><td>Tarariras</td><td>----</td><td>FM</td><td>—</td></tr>
-  <tr><td>146.730 MHz</td><td>-600 kHz</td><td>82.5</td><td>Colonia</td><td>C.d.Sacramento</td><td>---</td><td>FM</td><td>—</td></tr>
-  <tr><td>224.700 MHz</td><td>-1600 kHz</td><td>82.5</td><td>Colonia</td><td>C.d.Sacramento</td><td>---</td><td>FM</td><td>—</td></tr>
-  <tr><td>432.725 MHz</td><td>+5000 kHz</td><td>82.5</td><td>Colonia</td><td>C.d.Sacramento</td><td>---</td><td>FM</td><td>—</td></tr>
-  <tr><td>432.950 MHz</td><td>+5000 kHz</td><td>C4FM</td><td>Colonia</td><td>C.d.Sacramento</td><td>---</td><td>FM</td><td>—</td></tr>
-  <tr><td>145.450 MHz</td><td>-600 kHz</td><td>----</td><td>Cerro Largo</td><td>Rio Branco</td><td>CX2VXX</td><td>FM / Echolink</td><td><a href="#">Nodo activo</a></td></tr>
-  <tr><td>146.640 MHz</td><td>-600 kHz</td><td>82.5</td><td>Lavalleja</td><td>Minas</td><td>CX3SXX</td><td>FM</td><td>—</td></tr>
-  <tr><td>146.720 MHz</td><td>-600 kHz</td><td>82.5</td><td>Lavalleja</td><td>cerro pelado</td><td>----</td><td>FM</td><td>—</td></tr>
-  <tr><td>147.090 MHz</td><td>+600 kHz</td><td>82.5</td><td>Maldonado</td><td>Piriapolis</td><td>CX4RXX</td><td>FM</td><td>—</td></tr>
-  <tr><td>146.820 MHz</td><td>-600 kHz</td><td>82.5</td><td>Maldonado</td><td>P.del Este</td><td>---</td><td>FM/DMR</td><td>—</td></tr>
-  <tr><td>147.240 MHz</td><td>+600 kHz</td><td>82.5</td><td>Montevideo</td><td>Montevideo</td><td>CX2AXX</td><td>FM / Echolink</td><td><a href="#">Nodo activo</a></td></tr>
-  <tr><td>432.925 MHz</td><td>+5000 Khz</td><td>82.5</td><td>Montevideo</td><td>RCU</td><td>---</td><td>FM/DMR</td><td>—</td></tr>
-  <tr><td>432.400 MHz</td><td>+5000 Khz</td><td>82.5</td><td>Montevideo</td><td>El Gaucho</td><td>---</td><td>FM/C4FM</td><td>—</td></tr>
-  <tr><td>146.720 MHz</td><td>-600 kHz</td><td>82.5</td><td>Soriano</td><td>Dolores</td><td>---</td><td>FM</td><td>—</td></tr>
-  <tr><td>432.500 MHz</td><td>+5000 kHz</td><td>82.5</td><td>Paysandú</td><td>Paysandú</td><td>---</td><td>FM</td><td>—</td></tr>
-  <tr><td>147.210 MHz</td><td>+600 kHz</td><td>136.5</td><td>Paysandú</td><td>Paysandú</td><td>---</td><td>FM</td><td>—</td></tr>
+      <!-- Artigas -->
+      <tr><td>145.610 MHz</td><td>-600 kHz</td><td>82.5</td><td>Artigas</td><td>Artigas</td><td>CX1KXX</td><td>FM</td><td>—</td></tr>
 
-</tbody>
+      <!-- Canelones -->
+      <tr><td>147.000 MHz</td><td>-600 kHz</td><td>82.5</td><td>Canelones</td><td>Juanicó</td><td>CX3DXX</td><td>FM</td><td>—</td></tr>
+      <tr><td>147.150 MHz</td><td>+600 kHz</td><td>100</td><td>Canelones</td><td>Las Piedras</td><td>CX6DXX</td><td>FM / Echolink</td><td><a href="#">Nodo activo</a></td></tr>
 
-    </tbody>
-  </table>
+      <!-- Cerro Largo -->
+      <tr><td>145.450 MHz</td><td>-600 kHz</td><td>82.5</td><td>Cerro Largo</td><td>Río Branco</td><td>CX2VXX</td><td>FM / Echolink</td><td><a href="#">Nodo activo</a></td></tr>
 
+      <!-- Colonia -->
+      <tr><td>145.330 MHz</td><td>+600 kHz</td><td>88.5</td><td>Colonia</td><td>Tarariras</td><td>CX2FXX</td><td>FM</td><td>—</td></tr>
+      <tr><td>432.850 MHz</td><td>+5000 kHz</td><td>88.5</td><td>Colonia</td><td>Tarariras</td><td>—</td><td>FM</td><td>—</td></tr>
+      <tr><td>146.730 MHz</td><td>-600 kHz</td><td>82.5</td><td>Colonia</td><td>Colonia del Sacramento</td><td>—</td><td>FM</td><td>—</td></tr>
+      <tr><td>224.700 MHz</td><td>-1600 kHz</td><td>82.5</td><td>Colonia</td><td>Colonia del Sacramento</td><td>—</td><td>FM</td><td>—</td></tr>
+      <tr><td>432.725 MHz</td><td>+5000 kHz</td><td>82.5</td><td>Colonia</td><td>Colonia del Sacramento</td><td>—</td><td>FM</td><td>—</td></tr>
+      <tr><td>432.950 MHz</td><td>+5000 kHz</td><td>C4FM</td><td>Colonia</td><td>Colonia del Sacramento</td><td>—</td><td>FM</td><td>—</td></tr>
+
+      <!-- Lavalleja -->
+      <tr><td>146.640 MHz</td><td>-600 kHz</td><td>82.5</td><td>Lavalleja</td><td>Minas</td><td>CX3SXX</td><td>FM</td><td>—</td></tr>
+      <tr><td>146.720 MHz</td><td>-600 kHz</td><td>82.5</td><td>Lavalleja</td><td>Cerro Pelado</td><td>—</td><td>FM</td><td>—</td></tr>
+
+      <!-- Maldonado -->
+      <tr><td>147.090 MHz</td><td>+600 kHz</td><td>82.5</td><td>Maldonado</td><td>Piriápolis</td><td>CX4RXX</td><td>FM</td><td>—</td></tr>
+      <tr><td>146.820 MHz</td><td>-600 kHz</td><td>82.5</td><td>Maldonado</td><td>Punta del Este</td><td>—</td><td>FM/DMR</td><td>—</td></tr>
+
+      <!-- Montevideo -->
+      <tr><td>147.240 MHz</td><td>+600 kHz</td><td>82.5</td><td>Montevideo</td><td>Montevideo</td><td>CX2AXX</td><td>FM / Echolink</td><td><a href="#">Nodo activo</a></td></tr>
+      <tr><td>432.925 MHz</td><td>+5000 kHz</td><td>82.5</td><td>Montevideo</td><td>RCU</td><td>—</td><td>FM/DMR</td><td>—</td></tr>
+      <tr><td>432.400 MHz</td><td>+5000 kHz</td><td>82.5</td><td>Montevideo</td><td>El Gaucho</td><td>—</td><td>FM/C4FM</td><td>—</td></tr>
+
+      <!-- Paysandú -->
+      <tr><td>432.500 MHz</td><td>+5000 kHz</td><td>82.5</td><td>Paysandú</td><td>Paysandú</td><td>—</td><td>FM</td><td>—</td></tr>
+      <tr><td>147.210 MHz</td><td>+600 kHz</td><td>136.5</td><td>Paysandú</td><td>Paysandú</td><td>—</td><td>FM</td><td>—</td></tr>
+
+      <!-- Rivera -->
+      <tr><td>146.970 MHz</td><td>-600 kHz</td><td>82.5</td><td>Rivera</td><td>Rivera</td><td>—</td><td>FM</td><td>—</td></tr>
+
+      <!-- Rocha -->
+      <tr><td>146.850 MHz</td><td>-600 kHz</td><td>82.5</td><td>Rocha</td><td>Rocha</td><td>—</td><td>FM</td><td>—</td></tr>
+
+      <!-- Salto -->
+      <tr><td>146.790 MHz
 
  <!DOCTYPE html>
 <html lang="es">
