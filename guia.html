@@ -17,7 +17,8 @@
   </ul>
 <!-- 🔻 Separador institucional Estación Charly -->
 <hr style="border: none; height: 2px; background: linear-gradient(to right, #1a1a1a, #4d4d4d); margin: 2em 0;">
-<!DOCTYPE html>
+
+  <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -30,12 +31,12 @@
       font-family: 'Segoe UI', sans-serif;
       padding: 20px;
     }
-    h1 {
+    h1, h2 {
       color: #39ff14;
       text-align: center;
       text-shadow: 0 0 5px #39ff14;
     }
-    select, button {
+    select, button, textarea {
       margin: 10px 5px;
       padding: 8px;
       background-color: #1f1f1f;
@@ -67,9 +68,46 @@
       margin-bottom: 10px;
       color: hsl(0, 96%, 49%);
     }
+    a {
+      color: #81c784;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
     .filtros {
       text-align: center;
       margin-bottom: 20px;
+    }
+    .mapa, .reporte, .pie {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #1f1f1f;
+      border-radius: 8px;
+    }
+    .reporte textarea {
+      width: 100%;
+      height: 100px;
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      border: 1px solid #39ff14;
+      padding: 10px;
+      resize: vertical;
+    }
+    .reporte button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #39ff14;
+      color: #0a0a0a;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .pie {
+      text-align: center;
+      font-size: 0.9em;
+      color: #81c784;
     }
   </style>
 </head>
@@ -112,6 +150,7 @@
   <table id="tablaRepetidoras">
     <caption>SITIO EN CONSTRUCCIÓN, PUEDE CONTENER ERRORES</caption>
     <thead>
+  
       <tr>
         <th>Frecuencia</th>
         <th>Desplazamiento</th>
@@ -124,7 +163,7 @@
       </tr>
     </thead>
     <tbody>
-      <tbody>
+          <tbody>
   <tr><td>146.520 MHz</td><td>Canal</td><td>de</td><td>encuentro</td><td>---</td><td>Internacional</td><td>FM</td><td>—</td></tr>          
   <tr><td>223.500 MHz</td><td>Canal</td><td>de</td><td>encuentro</td><td>---</td><td>Internacional</td><td>FM</td><td>—</td></tr>
   <tr><td>145.610 MHz</td><td>-600 kHz</td><td>82.5</td><td>Artigas</td><td>Artigas</td><td>CX1KXX</td><td>FM</td><td>—</td></tr>
@@ -150,40 +189,27 @@
 
 </tbody>
 
-  </table>
-
-  <script>
-    function filtrarTabla() {
-      const departamentoSeleccionado = document.getElementById("departamento").value.toLowerCase();
-      const modoSeleccionado = document.getElementById("modo").value.toLowerCase();
-      const tabla = document.getElementById("tablaRepetidoras");
-      const filas = tabla.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
-
-      for (let fila of filas) {
-        const departamento = fila.cells[3].textContent.toLowerCase();
-        const modo = fila.cells[6].textContent.toLowerCase();
-
-        const coincideDepartamento = !departamentoSeleccionado || departamento === departamentoSeleccionado;
-        const coincideModo = !modoSeleccionado || modo === modoSeleccionado;
-
-        fila.style.display = (coincideDepartamento && coincideModo) ? "" : "none";
-      }
-    }
-
-    function resetFiltros() {
-      document.getElementById("departamento").value = "";
-      document.getElementById("modo").value = "";
-      filtrarTabla();
-    }
-  </script>
-</body>
-</html>
-          
     </tbody>
   </table>
 
 
- 
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reporte comunitario</title>
+</head>
+<body>
+ <div class="reporte">
+  <h2>Reporte comunitario</h2>
+  <p>¿Detectaste una repetidora fuera de servicio, interferencias o cambios de frecuencia?</p>
+  <form action="https://formsubmit.co/cx5ecl@gmail.com" method="POST">
+    <textarea name="reporte" placeholder="Escribí tu reporte aquí..." required></textarea>
+    <input type="hidden" name="_next" value="https://charly-ham-radio.github.io/agradecimiento.html">
+    <input type="hidden" name="_captcha" value="false">
+    <button type="submit">Enviar reporte</button>
+  </form>
+</div>
 
 <!-- 🔻 Separador institucional Estación Charly -->
 <hr style="border: none; height: 2px; background: linear-gradient(to right, #1a1a1a, #4d4d4d); margin: 2em 0;">
@@ -272,6 +298,7 @@
 
 <!-- 🔻 Separador institucional Estación Charly -->
 <hr style="border: none; height: 2px; background: linear-gradient(to right, #1a1a1a, #4d4d4d); margin: 2em 0;">
+
 
 
 
@@ -437,5 +464,3 @@
 
 </body>
 </html>
- 
- 
