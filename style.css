@@ -84,3 +84,9 @@ nav a:hover,
     transform: translateY(0);
   }
 }
+@media (max-width: 768px) {
+  .tabla-frecuencias {
+    font-size: 0.9em;
+    overflow-x: auto;
+  }
+}
