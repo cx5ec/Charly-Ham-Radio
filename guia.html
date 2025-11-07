@@ -151,7 +151,6 @@
   <table id="tablaRepetidoras">
     <caption>SITIO EN CONSTRUCCIÓN, PUEDE CONTENER ERRORES</caption>
     <thead>
-  
       <tr>
         <th>Frecuencia</th>
         <th>Desplazamiento</th>
@@ -163,6 +162,7 @@
         <th>Echolink</th>
       </tr>
     </thead>
+    <tbody>
     <tr><td>146.520 MHz</td><td>Canal</td><td>de</td><td>encuentro</td><td>---</td><td>Internacional</td><td>FM</td><td>—</td></tr>          
   <tr><td>223.500 MHz</td><td>Canal</td><td>de</td><td>encuentro</td><td>---</td><td>Internacional</td><td>FM</td><td>—</td></tr>
   <tr><td>145.610 MHz</td><td>-600 kHz</td><td>82.5</td><td>Artigas</td><td>Artigas</td><td>CX1KXX</td><td>FM</td><td>—</td></tr>
@@ -186,10 +186,39 @@
   <tr><td>432.500 MHz</td><td>+5000 kHz</td><td>82.5</td><td>Paysandú</td><td>Paysandú</td><td>---</td><td>FM</td><td>—</td></tr>
   <tr><td>147.210 MHz</td><td>+600 kHz</td><td>136.5</td><td>Paysandú</td><td>Paysandú</td><td>---</td><td>FM</td><td>—</td></tr>
 
-</tbody> 
-  
+    </tbody>
   </table>
 
+  <script>
+    function filtrarTabla() {
+      const departamento = document.getElementById("departamento").value;
+      const modo = document.getElementById("modo").value;
+      const tabla = document.getElementById("tablaRepetidoras");
+      const filas = tabla.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+
+      for (let i = 0; i < filas.length; i++) {
+        const celdas = filas[i].getElementsByTagName("td");
+        const dep = celdas[3].textContent.trim();
+        const mod = celdas[6].textContent.trim();
+
+        const coincideDep = departamento === "" || dep === departamento;
+        const coincideMod = modo === "" || mod === modo;
+
+        if (coincideDep && coincideMod) {
+          filas[i].style.display = "";
+        } else {
+          filas[i].style.display = "none";
+        }
+      }
+    }
+
+    function resetFiltros() {
+      document.getElementById("departamento").value = "";
+      document.getElementById("modo").value = "";
+      filtrarTabla();
+    }
+  </script>
+</body>
 
 
 <!DOCTYPE html>
