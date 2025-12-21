@@ -1,10 +1,10 @@
 <div id="top"></div>
 
-<!-- Estación Charly — Saludo Navidad y Fin de Año -->
+<!-- Estación Charly — Saludo Festivo Navidad y Fin de Año -->
 <section class="ec-holiday-block" aria-labelledby="ec-holiday-title">
   <div class="ec-wrap">
     <header class="ec-header">
-      <h2 id="ec-holiday-title">Felices Fiestas — Estación Charly</h2>
+      <h2 id="ec-holiday-title">🔔 Felices Fiestas — Estación Charly 🎀</h2>
       <p class="ec-sub">Que esta temporada traiga contactos claros, buena propagación y momentos memorables. ¡Gracias por estar ahí!</p>
     </header>
 
@@ -16,7 +16,7 @@
     <div class="ec-card">
       <div class="ec-card-top">
         <span class="ec-badge">2025</span>
-        <h3 class="ec-greet">¡Feliz Navidad y próspero Año Nuevo!</h3>
+        <h3 class="ec-greet">🎄 ¡Feliz Navidad y próspero Año Nuevo! 🎄</h3>
         <p class="ec-text">
           Cerramos un ciclo con gratitud y abrimos otro con entusiasmo. Que cada QSO sume comunidad,
           aprendizaje y alegría. 73 de Estación Charly.
@@ -32,13 +32,23 @@
       </div>
     </div>
 
-    <!-- Adorno navideño: guirnalda de luces -->
+    <!-- Adornos navideños -->
     <div class="ec-garland" aria-hidden="true">
       <span class="bulb red"></span><span class="bulb gold"></span><span class="bulb green"></span><span class="bulb silver"></span>
       <span class="bulb red"></span><span class="bulb gold"></span><span class="bulb green"></span><span class="bulb silver"></span>
     </div>
 
-    <!-- Adorno navideño: copos sutiles -->
+    <!-- Campanitas -->
+    <div class="ec-bells" aria-hidden="true">
+      <span class="bell">🔔</span><span class="bell">🔔</span>
+    </div>
+
+    <!-- Cinta navideña -->
+    <div class="ec-ribbon" aria-hidden="true">
+      <span>🎀</span>
+    </div>
+
+    <!-- Copos de nieve -->
     <div class="ec-snow" aria-hidden="true">
       <span></span><span></span><span></span><span></span><span></span>
     </div>
@@ -47,50 +57,55 @@
 
 <style>
   :root {
-    --ec-green: #0bf50b;
-    --ec-black: #0a0a0a;   /* fondo más negro */
-    --ec-gray: #5c5a5a;   /* gris oscuro para contraste */
-    --ec-red: #3307f8;
-    --ec-gold: #fc0404;
-    --ec-silver: #d5e0f1;
-    --ec-white: #faf8f8;
+    --ec-green: #00d26a;   /* verde vivo */
+    --ec-black: #000000;   /* negro absoluto */
+    --ec-gray: #3a3a3a;    /* gris intenso */
+    --ec-red: #ff2e2e;     /* rojo brillante */
+    --ec-gold: #ffcc00;    /* dorado luminoso */
+    --ec-silver: #d9e2ec;  /* plateado claro */
+    --ec-white: #ffffff;
   }
 
   .ec-holiday-block {
-    background: var(--ec-black); /* fondo negro predominante */
+    background: var(--ec-black);
     color: var(--ec-white);
     padding: 2.5rem 1.5rem;
     border-top: 6px solid var(--ec-green);
     border-bottom: 6px solid var(--ec-gray);
     position: relative;
     overflow: hidden;
+    text-align: center;
   }
 
-  .ec-header h2 { color: var(--ec-green); }
-  .ec-sub { color: var(--ec-gray); }
+  .ec-header h2 {
+    color: var(--ec-green);
+    font-weight: 800;
+    text-shadow: 0 0 8px var(--ec-green), 0 0 12px var(--ec-gold);
+  }
+  .ec-sub { color: var(--ec-white); font-size: 1.1rem; }
 
   .ec-figure {
     background: var(--ec-gray);
     border: 2px solid var(--ec-green);
     border-radius: 10px;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.6);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.8);
     margin: 1.5rem auto 2rem;
     max-width: 820px;
     overflow: hidden;
   }
-  .ec-figure figcaption { background: var(--ec-black); color: var(--ec-white); }
+  .ec-figure figcaption { background: var(--ec-black); color: var(--ec-gold); font-weight: 600; }
 
   .ec-card {
     background: var(--ec-gray);
-    border: 1.5px solid var(--ec-green);
+    border: 2px solid var(--ec-green);
     border-radius: 12px;
     padding: 1.25rem;
     color: var(--ec-white);
   }
   .ec-card-top { border-left: 6px solid var(--ec-green); padding-left: 1rem; }
-  .ec-badge { background: var(--ec-green); color: var(--ec-black); }
-  .ec-greet { color: var(--ec-gold); }
-  .ec-text { color: var(--ec-white); }
+  .ec-badge { background: var(--ec-green); color: var(--ec-black); font-weight: 700; }
+  .ec-greet { color: var(--ec-gold); font-size: 1.8rem; font-weight: 700; text-shadow: 0 0 6px var(--ec-red); }
+  .ec-text { color: var(--ec-white); font-size: 1.1rem; line-height: 1.6; }
 
   .ec-card-bottom {
     background: #1a1a1a;
@@ -99,13 +114,35 @@
     padding: 0.9rem 1rem;
     margin-top: 1rem;
   }
-  .ec-highlights .label { color: var(--ec-gold); }
+  .ec-highlights .label { color: var(--ec-gold); font-weight: 700; }
 
+  /* Guirnalda */
+  .ec-garland { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .ec-garland .bulb { width: 12px; height: 12px; border-radius: 50%; animation: twinkle 2.8s infinite ease-in-out; }
   .ec-garland .bulb.red { background: var(--ec-red); }
   .ec-garland .bulb.gold { background: var(--ec-gold); }
   .ec-garland .bulb.green { background: var(--ec-green); }
   .ec-garland .bulb.silver { background: var(--ec-silver); }
-</style
+  @keyframes twinkle { 0%,100%{transform:scale(1);} 50%{transform:scale(1.2);} }
+
+  /* Campanitas */
+  .ec-bells { margin-top: 1rem; font-size: 2rem; color: var(--ec-gold); }
+  .ec-bells .bell { margin: 0 0.5rem; animation: swing 2s infinite ease-in-out; display: inline-block; }
+  @keyframes swing { 0%{transform:rotate(0);} 25%{transform:rotate(15deg);} 50%{transform:rotate(0);} 75%{transform:rotate(-15deg);} 100%{transform:rotate(0);} }
+
+  /* Cinta */
+  .ec-ribbon { margin-top: 1rem; font-size: 2.5rem; color: var(--ec-red); }
+
+  /* Copos */
+  .ec-snow { position: absolute; inset: 0; pointer-events: none; }
+  .ec-snow span { position: absolute; top: -10px; width: 6px; height: 6px; background: var(--ec-white); border-radius: 50%; animation: snow 9s linear infinite; }
+  .ec-snow span:nth-child(1){left:10%;animation-delay:0s;}
+  .ec-snow span:nth-child(2){left:30%;animation-delay:1.5s;}
+  .ec-snow span:nth-child(3){left:50%;animation-delay:3s;}
+  .ec-snow span:nth-child(4){left:70%;animation-delay:4.5s;}
+  .ec-snow span:nth-child(5){left:85%;animation-delay:6s;}
+  @keyframes snow { 0%{transform:translateY(0);} 100%{transform:translateY(100vh);} }
+</style>
 
 
 <!DOCTYPE html>
